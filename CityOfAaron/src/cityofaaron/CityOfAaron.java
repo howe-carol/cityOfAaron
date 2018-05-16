@@ -1,7 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * the main() class file for the cityOfAaron project
+ * CIT 260
+ * Spring 2018
+ * Team members: Tiffany Romrell, Carol Howe, Benjamin Wood
  */
 package cityofaaron;
 
