@@ -1,5 +1,5 @@
 /*
- * the main() class file for the cityOfAaron project
+ * the main() class file for the cityOfAaron project.
  * CIT 260
  * Spring 2018
  * Team members: Tiffany Romrell, Carol Howe, Benjamin Wood
