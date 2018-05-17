@@ -13,9 +13,10 @@ import java.io.Serializable;
  */
 public class Game implements Serializable {
     
-    // vlass intance variables
+    // Class intance variables
     
    private Player thePlayer;
+   
    public Game() {
     }
    
