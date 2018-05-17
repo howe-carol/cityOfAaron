@@ -5,6 +5,7 @@
  */
 package byui.cit260.CityOfAaron.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
@@ -12,7 +13,7 @@ import java.util.Objects;
  * @author carolhowe
  */
 public class Game implements Serializable {
-    private String Player thePlayer; //not sure?
+    private String Player = thePlayer; //not sure?
 
     public Game() {
     }
