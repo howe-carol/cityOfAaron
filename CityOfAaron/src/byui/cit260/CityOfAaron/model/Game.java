@@ -5,45 +5,42 @@
  */
 package byui.cit260.CityOfAaron.model;
 
-import java.io.Serializable;
 import java.util.Objects;
-
 
 /**
  *
  * @author carolhowe
  */
 public class Game implements Serializable {
-    
-    // Class intance variables
-    
-   private Player thePlayer;
-   
-   public Game() {
-    }
-   
+    private String Player thePlayer; //not sure?
 
-    public Player getThePlayer() {
-        return thePlayer;
+    public Game() {
+    }
+    
+    
+
+    public String getPlayer() {
+        return Player;
     }
 
-    public void setThePlayer(Player thePlayer) {
-        this.thePlayer = thePlayer;
+    public void setPlayer(String Player) {
+        this.Player = Player;
     }
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 97 * hash + Objects.hashCode(this.thePlayer);
+        int hash = 7;
+        hash = 61 * hash + Objects.hashCode(this.Player);
         return hash;
     }
 
     @Override
     public String toString() {
-        return "Game{" + "thePlayer=" + thePlayer + '}';
+        return "Game{" + "Player=" + Player + '}';
     }
     
-   
+    
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -56,12 +53,15 @@ public class Game implements Serializable {
             return false;
         }
         final Game other = (Game) obj;
-        if (!Objects.equals(this.thePlayer, other.thePlayer)) {
+        if (!Objects.equals(this.Player, other.Player)) {
             return false;
         }
         return true;
     }
-   
-   
+    
+    
+    
+    
+    
     
 }
