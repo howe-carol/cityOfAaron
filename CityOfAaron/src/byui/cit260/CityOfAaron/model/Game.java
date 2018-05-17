@@ -6,6 +6,8 @@
 package byui.cit260.CityOfAaron.model;
 
 import java.io.Serializable;
+import java.util.Objects;
+
 
 /**
  *
