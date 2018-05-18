@@ -11,12 +11,12 @@ package byui.cit260.CityOfAaron.model;
  */
 public enum TeamMember {
     
-    Ben("He is a worker"),
-    Carol("She is a mom"),
-    Tiffany("She is a designer");
+    Ben("Ben","He is a worker"),
+    Carol("Carol","She is a mom"),
+    Tiffany("Tiffany","She is a designer");
     
-    private String name;
-    private String title;
+    private final String name;
+    private final String title;
    
     
     
