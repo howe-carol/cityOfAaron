@@ -6,17 +6,25 @@
  */
 package cityofaaron;
 
+import byui.cit260.CityOfAaron.model.Player;
+
 /**
  *
  * @author carolhowe
  */
 public class CityOfAaron {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Player playerOne = new Player();
+        
+        playerOne.setName("Fred Fliststone");
+        playerOne.getName();
+        
+        String playerOneName = playerOne.getName();
+      
+        
+        System.out.println("Name = " + playerOneName );
+        
     }
     
 }
