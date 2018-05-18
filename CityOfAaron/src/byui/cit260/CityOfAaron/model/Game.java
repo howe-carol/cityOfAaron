@@ -12,32 +12,36 @@ import java.util.Objects;
  *
  * @author carolhowe
  */
-public class Game implements Serializable {
-    private String Player = thePlayer; //not sure?
+public class Game implements Serializable {   
+    
+    private String thePlayer;
 
     public Game() {
     }
     
     
+    
+    
+    // private thePlayer = Player; ?
 
-    public String getPlayer() {
-        return Player;
+    public String getThePlayer() {
+        return thePlayer;
     }
 
-    public void setPlayer(String Player) {
-        this.Player = Player;
+    public void setThePlayer(String thePlayer) {
+        this.thePlayer = thePlayer;
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 61 * hash + Objects.hashCode(this.Player);
+        hash = 71 * hash + Objects.hashCode(this.thePlayer);
         return hash;
     }
 
     @Override
     public String toString() {
-        return "Game{" + "Player=" + Player + '}';
+        return "Game{" + "thePlayer=" + thePlayer + '}';
     }
     
     
@@ -54,7 +58,7 @@ public class Game implements Serializable {
             return false;
         }
         final Game other = (Game) obj;
-        if (!Objects.equals(this.Player, other.Player)) {
+        if (!Objects.equals(this.thePlayer, other.thePlayer)) {
             return false;
         }
         return true;
@@ -62,7 +66,4 @@ public class Game implements Serializable {
     
     
     
-    
-    
-    
-}
+} 
