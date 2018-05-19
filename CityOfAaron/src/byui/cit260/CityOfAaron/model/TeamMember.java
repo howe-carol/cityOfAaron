@@ -5,11 +5,13 @@
  */
 package byui.cit260.CityOfAaron.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author carolhowe
  */
-public enum TeamMember {
+public enum TeamMember implements Serializable{
     
     Ben("Ben","He is a worker"),
     Carol("Carol","She is a mom"),

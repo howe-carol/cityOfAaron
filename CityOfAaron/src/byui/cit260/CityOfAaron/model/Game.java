@@ -15,6 +15,7 @@ import java.util.Objects;
 public class Game implements Serializable {   
     
     private String thePlayer;
+    
 
     public Game() {
     }
