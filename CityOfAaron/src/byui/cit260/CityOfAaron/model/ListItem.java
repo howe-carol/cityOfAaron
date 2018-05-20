@@ -40,6 +40,14 @@ public class ListItem implements Serializable{
         this.number = number;
     }
 
+    
+    @Override
+    public String toString() {
+        return "ListItem{" + "name=" + name + ", number=" + number + '}';
+    }
+    
+    
+
     @Override
     public int hashCode() {
         int hash = 7;
@@ -67,11 +75,5 @@ public class ListItem implements Serializable{
             return false;
         }
         return true;
-    }
-
-
-    
-
-    
-    
+    }  
 }
