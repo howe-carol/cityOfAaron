@@ -6,6 +6,7 @@
  */
 package cityofaaron;
 
+import byui.cit260.CityOfAaron.model.CropData;
 import byui.cit260.CityOfAaron.model.Player;
 
 /**
@@ -24,6 +25,12 @@ public class CityOfAaron {
       
         
         System.out.println("Name = " + playerOneName );
+        
+        CropData newCrop = new CropData();
+        newCrop.setNewPeople(3);
+        newCrop.getNewPeople();
+        int newCropData = newCrop.getNewPeople();
+        System.out.println("Number of new people is " + newCropData +". Built by Benjamin Wood.");
         
     }
     
