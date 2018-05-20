@@ -29,6 +29,9 @@ public class CropData implements Serializable{
     private int numStarved;
     private int eatenByRats;
     private int wheatForPeople;
+    
+    public CropData() { 
+    }
 
     public CropData(int year, int population, int acresOwned, int cropYield, int wheatInStore, int numberWhoDied, int newPeople, int harvest, int harvestAfterOffering, int offering, int offeringBushels, int peopleFed, int acresPlanted, int numStarved, int eatenByRats, int wheatForPeople) {
         this.year = year;
