@@ -21,6 +21,9 @@ public class ListItem implements Serializable{
         this.name = name;
         this.number = number;
     }
+
+    public ListItem() {
+    }
     
     
 
