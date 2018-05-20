@@ -6,8 +6,10 @@
  */
 package cityofaaron;
 
+import byui.cit260.CityOfAaron.model.ListItem;
 import byui.cit260.CityOfAaron.model.CropData;
 import byui.cit260.CityOfAaron.model.Player;
+
 
 /**
  *
@@ -31,6 +33,13 @@ public class CityOfAaron {
         newCrop.getNewPeople();
         int newCropData = newCrop.getNewPeople();
         System.out.println("Number of new people is " + newCropData +". Built by Benjamin Wood.");
+        
+        ListItem total = new ListItem();
+        total.setNumber(5);
+        total.getNumber();
+        int newListItem = total.getNumber();
+        System.out.println("The total of this item is " + newListItem +". Built by Tiffany Romrell.");
+        
         
     }
     
