@@ -8,6 +8,7 @@ package cityofaaron;
 
 import byui.cit260.CityOfAaron.model.ListItem;
 import byui.cit260.CityOfAaron.model.CropData;
+import byui.cit260.CityOfAaron.model.Location;
 import byui.cit260.CityOfAaron.model.Player;
 
 
@@ -39,6 +40,16 @@ public class CityOfAaron {
         total.getNumber();
         int newListItem = total.getNumber();
         System.out.println("The total of this item is " + newListItem +". Built by Tiffany Romrell.");
+        
+        Location newLocation = new Location();
+        newLocation.setDescription(playerOneName);
+        newLocation.getDescription();
+        System.out.println("The location is:" + newLocation + "Built by Carol Howe");
+        
+       
+        
+        
+        
         
         
     }
