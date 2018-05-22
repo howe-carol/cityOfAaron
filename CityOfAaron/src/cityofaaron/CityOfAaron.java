@@ -42,10 +42,10 @@ public class CityOfAaron {
         System.out.println("The total of this item is " + newListItem +". Built by Tiffany Romrell.");
         
         Location newLocation = new Location();
-        newLocation.setDescription(playerOneName);
         newLocation.getDescription();
+        newLocation.getSymbol();
         System.out.println("The location is:" + newLocation + "Built by Carol Howe");
-        
+       
        
         
         
