@@ -84,10 +84,10 @@ public class CropControlTest {
             System.out.println("sellLandBoundary");
             CropData theCrops = new CropData();
             theCrops.setWheatInStore(1000);
-            theCrops.setAcresOwned(2800);
-            int toSell = (-5);
-            int price = 20;
-            int expResult = (-1);
+            theCrops.setAcresOwned(2000);
+            int toSell = 0;
+            int price = 10;
+            int expResult = 2000;
             int result = CropControl.sellLand(price, toSell, theCrops);
             assertEquals(expResult, result);
     }
