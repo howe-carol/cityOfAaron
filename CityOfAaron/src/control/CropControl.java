@@ -62,4 +62,37 @@ public class CropControl {
         return acresOwned;
     }
     
+   
+        // The feedPeople method 
+        // Purpose: To feed people.
+        //@param Bushels of wheat wanted to feed people.
+        //@param wheat in store
+        // @param a reference to a CropData object (wheatInStore)
+        //@param a reference to a CropData object (wheatForPeople)
+        // @ return the number of bushels left in store.
+        //Pre-conditions: Bushels of grain wanted to give people must be positive.
+        // and wheat in the wheatStore  <= Bushels of grain wanted to give people 
+
+    public static int feedPeople (int bushels, int wheatForPeople, CropData cropData, int wheatInStore )
+    {
+        // if bushels < 0, return -1
+        // if bushels > wheatInstore, return -1
+        // wheatForPeople = wheatInStore - bushels
+        // return wheatForPeople
+        
+        if(bushels < 0){
+            return -1;
+        }
+        
+       
+        int weathInStore = cropData.getWheatInStore();
+         if (bushels > wheatInStore){
+            return -1;
+        }
+         
+         
+        wheatForPeople = wheatInStore -= bushels;
+        
+        return wheatInStore;
+    }
 }
