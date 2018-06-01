@@ -85,7 +85,6 @@ public class CropControl {
         }
         
        
-        int weathInStore = cropData.getWheatInStore();
          if (bushels > wheatInStore){
             return -1;
         }
