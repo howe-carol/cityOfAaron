@@ -134,4 +134,27 @@ public class CropControlTest {
         int result = CropControl.feedPeople(bushels, wheatForPeople, cropData, wheatInStore);
         assertEquals(expResult, result);
     }
+        @Test
+    public void testFeedPeople4() {
+        System.out.println("feedPeople");
+        int bushels = 600;
+        int wheatForPeople = 0;
+        CropData cropData = null;
+        int wheatInStore = 300;
+        int expResult = -1;
+        int result = CropControl.feedPeople(bushels, wheatForPeople, cropData, wheatInStore);
+        assertEquals(expResult, result);
+    }
+    
+        @Test
+    public void testFeedPeople5() {
+        System.out.println("feedPeople");
+        int bushels = 500;
+        int wheatForPeople = 500;
+        CropData cropData = null;
+        int wheatInStore = 500;
+        int expResult = 0;
+        int result = CropControl.feedPeople(bushels, wheatForPeople, cropData, wheatInStore);
+        assertEquals(expResult, result);
+    }
 }
