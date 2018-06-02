@@ -7,6 +7,7 @@ package control;
 
 import byui.cit260.CityOfAaron.model.CropData;
 import java.util.Random;
+import java.util.Scanner;
 // The CropControl class - part of the control layer
 // class contains all of the calculation methods for managing the crops
  /**
@@ -94,4 +95,38 @@ public class CropControl {
         
         return wheatInStore;
     }
+    
+        /**  Author = Benjamin Wood, Lesson 06: Individual Assignment
+        *setOffering method
+        *Purpose: to set the user’s offerings amount
+        *@param percent user's input of percent of offering to give
+        *@param cropData total harvest from CropData
+        *@return the amount to offer
+        *Pre-conditions:  user input must be positive, < zero and > 100.  The harvest must be positive *and < zero.
+        */
+
+    public static int setOffering(int percent, CropData cropData) {
+       
+        int offering = 0;
+        //precondition percent must be between 0 and 100
+
+        if (percent > 0 && percent < 100) {
+            offering = (percent * cropData.getHarvest()) / 100;
+            cropData.setOffering(offering);
+            return offering;
+        }
+        
+        if (percent >= 100){
+            return 0;
+        }
+                        
+        else{
+            return -1;
+        }
+        
+    }
+        
+        
 }
+
+

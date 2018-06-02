@@ -157,4 +157,74 @@ public class CropControlTest {
         int result = CropControl.feedPeople(bushels, wheatForPeople, cropData, wheatInStore);
         assertEquals(expResult, result);
     }
+    
+    /**
+     * Test of setOffering() method, of class CropControl.
+     */
+    @Test
+        public void testsetOffering1()
+        {
+            System.out.println("setOffering1");
+            CropData theCrops = new CropData();
+            theCrops.setHarvest(100);
+            int percent = 10;
+            int expResult = 10;
+            int result = CropControl.setOffering(percent, theCrops);
+            assertEquals(expResult, result);
+    }
+    @Test
+        public void testsetOffering2()
+        {
+            System.out.println("setOffering2");
+            CropData theCrops = new CropData();
+            theCrops.setHarvest(100);
+            int percent = (-10);
+            int expResult = -1;
+            int result = CropControl.setOffering(percent, theCrops);
+            assertEquals(expResult, result);
+    }
+    @Test
+        public void testsetOffering3()
+        {
+            System.out.println("setOffering3");
+            CropData theCrops = new CropData();
+            theCrops.setHarvest(100);
+            int percent = 0;
+            int expResult = -1;
+            int result = CropControl.setOffering(percent, theCrops);
+            assertEquals(expResult, result);
+    }
+    @Test
+        public void testsetOffering4()
+        {
+            System.out.println("setOffering4");
+            CropData theCrops = new CropData();
+            theCrops.setHarvest(100);
+            int percent = 100;
+            int expResult = 0;
+            int result = CropControl.setOffering(percent, theCrops);
+            assertEquals(expResult, result);
+    }
+        @Test
+        public void testsetOfferingBoundary1()
+        {
+            System.out.println("setOfferingBoundary1");
+            CropData theCrops = new CropData();
+            theCrops.setHarvest(0);
+            int percent = 0;
+            int expResult = -1;
+            int result = CropControl.setOffering(percent, theCrops);
+            assertEquals(expResult, result);
+    }
+        @Test
+        public void testsetOfferingBoundary2()
+        {
+            System.out.println("setOfferingBoundary2");
+            CropData theCrops = new CropData();
+            theCrops.setHarvest(1);
+            int percent = 100;
+            int expResult = 0;
+            int result = CropControl.setOffering(percent, theCrops);
+            assertEquals(expResult, result);
+    }
 }
