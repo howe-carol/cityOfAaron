@@ -7,7 +7,7 @@ package control;
 
 import byui.cit260.CityOfAaron.model.CropData;
 import java.util.Random;
-import java.util.Scanner;
+
 // The CropControl class - part of the control layer
 // class contains all of the calculation methods for managing the crops
  /**
