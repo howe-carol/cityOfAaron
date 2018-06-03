@@ -134,7 +134,6 @@ public class CropControl {
         if(cropYield < 0){
             return -1;
         }
-        
        
          if (cropYield > wheatInStore){
             return -1;
