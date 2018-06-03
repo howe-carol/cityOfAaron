@@ -125,6 +125,30 @@ public class CropControl {
         }
         
     }
+ 
+    public static int plantCrop (int cropYield, CropData cropData, int wheatInStore, int acresOwned, int acresPlanted){
+        // Author = Tiffany Romrell, Lesson 06: Individual Assignment
+        //plantCrop method
+
+        
+        if(cropYield < 0){
+            return -1;
+        }
+        
+       
+         if (cropYield > wheatInStore){
+            return -1;
+        }
+         
+         if (wheatInStore > acresOwned){
+             return -1;
+         }
+         
+         
+        acresPlanted = wheatInStore - (acresOwned - cropYield);
+        
+        return wheatInStore;
+    }
         
         
 }
