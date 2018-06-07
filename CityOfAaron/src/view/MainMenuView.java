@@ -150,7 +150,7 @@ public void doAction(int option)
         
         // Prompt for and get the user's name.
         String name;
-        System.out.println("\nPlease type in your first name: ");
+        System.out.println("Please type in your first name: ");
         name = keyboard.next();
         
         // Save the user's name in the Player object
@@ -160,7 +160,7 @@ public void doAction(int option)
         theGame.setThePlayer(thePlayer);
         
         // Display a welcome message
-        System.out.println("\nWelcome " + name + "have fun!");
+        System.out.println("Welcome " + name + "have fun!");
         
         // Display the game menu
         
