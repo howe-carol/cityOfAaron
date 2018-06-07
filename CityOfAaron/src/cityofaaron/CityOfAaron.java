@@ -5,11 +5,13 @@
  * Team members: Tiffany Romrell, Carol Howe, Benjamin Wood
  */
 package cityofaaron;
-
+import view.*;
 import byui.cit260.CityOfAaron.model.ListItem;
 import byui.cit260.CityOfAaron.model.CropData;
+import byui.cit260.CityOfAaron.model.Game;
 import byui.cit260.CityOfAaron.model.Location;
 import byui.cit260.CityOfAaron.model.Player;
+import byui.cit260.CityOfAaron.model.TeamMember;
 
 
 /**
@@ -18,7 +20,15 @@ import byui.cit260.CityOfAaron.model.Player;
  */
 public class CityOfAaron {
 
-    public static void main(String[] args) {
+    private static Game theGame = null;
+    
+    public static void main(String[] args) 
+    {
+       
+        
+        MainMenuView mmv = new MainMenuView(); 
+        mmv.displayMenuView();
+        
         Player playerOne = new Player();
         
         playerOne.setName("Fred Fliststone");
