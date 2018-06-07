@@ -4,21 +4,23 @@
  * Author: Carol Howe, Benjamin Wood, Tiffany Romrell
  * Date last modified: June 4 2018
  */
+
 package view;
 
 import java.util.Scanner;
-import gameproject.GameProject;
-import model.Player;
-import cityofaaron.CityOfAaron;
+//import gameproject.GameProject;
+import byui.cit260.CityOfAaron.model.Player;//import model.Player;
+import byui.cit260.CityOfAaron.model.Game; // import cityofaaron.CityOfAaron;
 /**
  *
  * @author carolhowe
  */
 public class MainMenuView {
+    Scanner keyboard = new Scanner (System.in);
     private String theMenu;
     private int max;
 
-    Scanner keyboard = new Scanner (System.in);
+   
     /**
      * The displayMenuView method
      * Purpose: displays the menu, gets user's input, and does the 
@@ -46,7 +48,7 @@ public void displayMenuView()
 {
 
     //Display the menu
-    System.out.println(mainMenu);
+    System.out.println(theMenu);
     
     //Prompt the user and get the user's input
     menuOption = getMenuOption();
@@ -66,17 +68,18 @@ public void displayMenuView()
 // ===================================
 public int getMenuOption()
 {
-int userInput;
+    int userInput;
 
 // begin loop
-do
+    do
 {
 // get user input from the keyboard
     userInput = keyboard.nextInt();
+    
 // if it is not a valid value, output an error message
     if (userInput < 1 || userInput > max)
 {
-    System.out.println(“Option must be between 1 and " + max);
+    System.out.println("\noption must be between 1 and " + max);
 }
 // loop back to the top if input was not valid 
     } while(userInput < 1 || userInput > max);
@@ -120,26 +123,71 @@ public void doAction(int option)
 
 
 
-/**
-* The startNewGame method
-* Purpose: creates game object and starts the game * Parameters: none
-* Returns: none
-*/
-// ===================================
-   public void startNewGame()
-    {
-    System.out.println("Start new game option selected."); 
+}
+    // The startNewGame method
+    // Purpose: create game object and starts the game
+    // parameters: none
+    // returns: none
+    // =====================================================
+    public void startNewGame(){
+        // Create a new Game object.
+        Game theGame = new Game();
+        
+        // Save a reference to it in the GameProject class.
+        CityOfAaron.setCurrentGame(theGame);
+        
+        // Display the Banner Page.
+        System.out.println("\nWelcome to the precious City of Aaron. You are\n"
+         + "hereby called to serve as a ruler of the city. You are resposible\n"
+         + "for the buying and selling the land. You will also carefully determine\n"
+         + "how much wheat to plant each year and how much you will put away to feed "
+         + "the citizens of Aaron. Yearly you will pay your tithes on the wheat that was harvest\n"
+         + "People will starve and die if you fail to provide enough wheat and your workforce will be dimished.\n"
+         + "One last warning! Rats like to eat your wheat!\n");
+        
+        // create a new Player object
+        Player thePlayer = new Player();
+        
+        // Prompt for and get the user's name.
+        String name;
+        System.out.println("\nPlease type in your first name: ");
+        name = keyboard.next();
+        
+        // Save the user's name in the Player object
+        thePlayer.setPlayerName(name);
+        
+        // Save a reference to the player object in the Game object.
+        theGame.setThePlayer(thePlayer);
+        
+        // Display a welcome message
+        System.out.println("\nWelcome " + name + "!");
+        
+        // Display the game menu
+    }
+    
+    // The startSavedGame method
+    // Purpose: locate game object and starts saved game
+    // parameters: none
+    // returns: none
+    // =====================================================
+    public void startExistingGame(){
+        System.out.println("\nStart saved game option .");
+    }
+    // The displayHelpMenuView method
+    // Purpose: Display the help menu view
+    // parameters: none
+    // returns: none
+    // =====================================================
+    public void displayHelpMenu(){
+        System.out.println("\nDisplay the help menu view.");
+    }
+    // The displaySaveGameView method
+    // Purpose: Display list of saved games
+    // parameters: none
+    // returns: none
+    // =====================================================
+    public void displaySaveGameView(){
+        System.out.println("\nDisplay list of saved games.");
     }
 
- public void startSavedGame()
-    {
-    System.out.println("Start saved game option selected."); 
-    }
- public void displayHelpMenuView()
-    {
-    System.out.println("Do you need help?"); 
-    }
- public void displaySaveGameView()
-    {
-    System.out.println("Save game selected."); 
-    }
+}
