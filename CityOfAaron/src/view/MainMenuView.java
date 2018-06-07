@@ -7,10 +7,10 @@
 
 package view;
 
-import java.util.Scanner;
-//import gameproject.GameProject;
+import java.util.Scanner; //import gameproject.GameProject;
 import byui.cit260.CityOfAaron.model.Player;//import model.Player;
 import byui.cit260.CityOfAaron.model.Game; // import cityofaaron.CityOfAaron;
+
 /**
  *
  * @author carolhowe
@@ -160,9 +160,10 @@ public void doAction(int option)
         theGame.setThePlayer(thePlayer);
         
         // Display a welcome message
-        System.out.println("\nWelcome " + name + "!");
+        System.out.println("\nWelcome " + name + "have fun!");
         
         // Display the game menu
+        
     }
     
     // The startSavedGame method
