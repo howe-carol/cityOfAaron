@@ -8,6 +8,7 @@
 package view;
 
 import java.util.Scanner; //import gameproject.GameProject;
+import cityofaaron.CityOfAaron;
 import byui.cit260.CityOfAaron.model.Player;//import model.Player;
 import byui.cit260.CityOfAaron.model.Game; // import cityofaaron.CityOfAaron;
 
@@ -79,7 +80,7 @@ public int getMenuOption()
 // if it is not a valid value, output an error message
     if (userInput < 1 || userInput > max)
 {
-    System.out.println("\noption must be between 1 and " + max);
+    System.out.println("\nOption must be between 1 and " + max);
 }
 // loop back to the top if input was not valid 
     } while(userInput < 1 || userInput > max);
@@ -87,7 +88,7 @@ public int getMenuOption()
     return userInput;
 }
 
-}
+
 
 /**
 *The doAction method
@@ -123,27 +124,40 @@ public void doAction(int option)
 
 
 
-}
+
     // The startNewGame method
     // Purpose: create game object and starts the game
     // parameters: none
     // returns: none
     // =====================================================
-    public void startNewGame(){
+    public void startNewGame()
+    {
         // Create a new Game object.
         Game theGame = new Game();
         
         // Save a reference to it in the GameProject class.
-        CityOfAaron.setCurrentGame(theGame);
+        CityOfAaron.setTheGame(theGame);
         
         // Display the Banner Page.
-        System.out.println("\nWelcome to the precious City of Aaron. You are\n"
-         + "hereby called to serve as a ruler of the city. You are resposible\n"
-         + "for the buying and selling the land. You will also carefully determine\n"
-         + "how much wheat to plant each year and how much you will put away to feed "
-         + "the citizens of Aaron. Yearly you will pay your tithes on the wheat that was harvest\n"
-         + "People will starve and die if you fail to provide enough wheat and your workforce will be dimished.\n"
-         + "One last warning! Rats like to eat your wheat!\n");
+        System.out.println("\n" +
+         "************************************************\n" +
+         "* Welcome to the precious City of Aaron. You   *\n" +
+         "* are hereby called to serve as a ruler of the *\n" +
+         "* city. You are resposible for the buying and  *\n" +
+         "* selling of the land. You will also carefully *\n" +
+         "* determine how much wheat to plant each year  *\n" +
+         "* and how much you will put away to feed the   *\n" +
+         "* citizens of Aaron. Yearly you will pay your  *\n" +
+         "* tithes and offerings on the wheat that was   *\n" +
+         "* harvested--just be grateful there's no taxes.*\n" +
+         "*                                              *\n" +
+         "* Also, people will starve and die if you fail *\n" +
+         "* to provide enough wheat, and your workforce  *\n" +
+         "* will be dimished.                            *\n" +
+         "*                                              *\n" +
+         "*          *****One last WARNING!*****         *\n" +
+         "*          Rats like to eat your wheat!        *\n" +
+         "************************************************\n");
         
         // create a new Player object
         Player thePlayer = new Player();
@@ -154,13 +168,13 @@ public void doAction(int option)
         name = keyboard.next();
         
         // Save the user's name in the Player object
-        thePlayer.setPlayerName(name);
+        thePlayer.setName(name);
         
         // Save a reference to the player object in the Game object.
         theGame.setThePlayer(thePlayer);
         
         // Display a welcome message
-        System.out.println("Welcome " + name + "have fun!");
+        System.out.println("Welcome " + name + ", have fun!");
         
         // Display the game menu
         
@@ -171,7 +185,8 @@ public void doAction(int option)
     // parameters: none
     // returns: none
     // =====================================================
-    public void startExistingGame(){
+    public void startSavedGame()
+    {
         System.out.println("\nStart saved game option .");
     }
     // The displayHelpMenuView method
@@ -179,7 +194,8 @@ public void doAction(int option)
     // parameters: none
     // returns: none
     // =====================================================
-    public void displayHelpMenu(){
+    public void displayHelpMenuView()
+    {
         System.out.println("\nDisplay the help menu view.");
     }
     // The displaySaveGameView method
@@ -187,7 +203,8 @@ public void doAction(int option)
     // parameters: none
     // returns: none
     // =====================================================
-    public void displaySaveGameView(){
+    public void displaySaveGameView()
+    {
         System.out.println("\nDisplay list of saved games.");
     }
 

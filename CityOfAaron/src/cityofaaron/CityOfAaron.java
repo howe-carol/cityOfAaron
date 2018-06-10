@@ -56,12 +56,15 @@ public class CityOfAaron {
         newLocation.getSymbol();
         System.out.println("The location is:" + newLocation + "Built by Carol Howe");
        
-       
-        
-        
-        
-        
-        
+  
+    }
+
+    public static Game getTheGame() {
+        return theGame;
+    }
+
+    public static void setTheGame(Game theGame) {
+        CityOfAaron.theGame = theGame;
     }
     
 }

@@ -20,16 +20,11 @@ public class Game implements Serializable {
     public Game() {
     }
     
-    
-    
-    
-    // private thePlayer = Player; ?
-
     public String getThePlayer() {
         return thePlayer;
     }
 
-    public void setThePlayer(String thePlayer) {
+    public  void setThePlayer(String thePlayer) {
         this.thePlayer = thePlayer;
     }
 
@@ -64,7 +59,11 @@ public class Game implements Serializable {
         }
         return true;
     }
-    
-    
+
+    public void setThePlayer(Player thePlayer) {
+        
+    }
+
+       
     
 } 
