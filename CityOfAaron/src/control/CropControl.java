@@ -148,6 +148,10 @@ public class CropControl {
         
         return wheatInStore;
     }
+
+    public static void buyLand(int toBuy, int price, CropData cropData) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
         
         
 }

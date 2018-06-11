@@ -15,7 +15,7 @@ import java.util.Objects;
 public class Game implements Serializable {   
     
     private String thePlayer;
-    private CropData cropData = null;
+    private CropData cropData;
 
     public Game() {
     }
@@ -77,15 +77,20 @@ public class Game implements Serializable {
     /**
     * the setCrops() method
     * Purpose: store a reference to a crop object
+    * @param cropData
     * Parameters: a reference to a crop object
     * Returns: none
     */
-    public void setCrop(Cropdata offering)
+    public void setCrop(CropData cropData)
     {
-        cropData = offering;
+        this.cropData = cropData;
     }
 
     public void setCropData(CropData cropData) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public CropData getCropData() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
