@@ -126,27 +126,25 @@ public class CropControl {
         
     }
  
-    public static int plantCrop (int cropYield, CropData cropData, int wheatInStore, int acresOwned, int acresPlanted){
+       public static int plantCrop (int cropYield, CropData cropData, int acresOwned, int acresPlanted){
         // Author = Tiffany Romrell, Lesson 06: Individual Assignment
         //plantCrop method
-
-        
-        if(cropYield < 0){
-            return -1;
-        }
-       
-         if (cropYield > wheatInStore){
-            return -1;
-        }
-         
-         if (wheatInStore > acresOwned){
+ 
+         if (acresOwned < cropYield){
              return -1;
          }
          
+         if (acresPlanted < cropYield){
+             return -1;
+         }
          
-        acresPlanted = wheatInStore - (acresOwned - cropYield);
+         if (acresOwned < acresPlanted){
+             return -1;
+         }
+         
+        acresOwned = cropYield - acresPlanted;
         
-        return wheatInStore;
+        return acresOwned;
     }
 
     public static void buyLand(int toBuy, int price, CropData cropData) {
