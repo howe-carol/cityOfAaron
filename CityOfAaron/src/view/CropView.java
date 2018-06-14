@@ -57,7 +57,28 @@ public class CropView {
     // as they are written
     }
     
-    
+    public void plantCropsView()
+    {
+        /**
+        *
+        * @author Tiffany Romrell
+        */
+        
+        /*int cropYield
+        CropData cropData
+        int acresOwned
+        int acresPlanted
+        */
+        
+        int acresPlanted = CropControl.plantCrop(0, cropData, 0, 0);
+        int acresOwned;
+        
+        System.out.println("How many crops would you like to plant?: ");
+        
+        int cropYield;
+        cropYield = keyboard.nextInt();
+        
+    }
     
     
     

@@ -227,4 +227,67 @@ public class CropControlTest {
             int result = CropControl.setOffering(percent, theCrops);
             assertEquals(expResult, result);
     }
+    
+     /**
+     * Test of plantCrop method, of class CropControl.
+     */
+    @Test
+    public void testPlantCrop() {
+        System.out.println("plantCrop");
+        int cropYield = 0;
+        CropData cropData = null;
+        int acresOwned = 0;
+        int acresPlanted = 0;
+        int expResult = 0;
+        int result = CropControl.plantCrop(cropYield, cropData, acresOwned, acresPlanted);
+        assertEquals(expResult, result);
+    }
+    
+      @Test
+    public void testPlantCrop1() {
+        System.out.println("PlantCrop1");
+        int cropYield = 45;
+        CropData cropData = null;
+        int acresOwned = 500;
+        int acresPlanted = 40;
+        int expResult = -1;
+        int result = CropControl.plantCrop(cropYield, cropData, acresOwned, acresPlanted);
+        assertEquals(expResult, result);
+
+    }
+    
+      @Test
+    public void testPlantCrop3() {
+        System.out.println("PlantCrop3");
+        int cropYield = 550;
+        CropData cropData = null;
+        int acresOwned = 500;
+        int acresPlanted = 25;
+        int expResult = -1;
+        int result = CropControl.plantCrop(cropYield, cropData, acresOwned, acresPlanted);
+        assertEquals(expResult, result);
+    }
+        @Test
+    public void testPlantCrop4() {
+        System.out.println("PlantCrop4");
+        int cropYield = 400;
+        CropData cropData = null;
+        int acresOwned = 500;
+        int acresPlanted = 510;
+        int expResult = -1;
+        int result = CropControl.plantCrop(cropYield, cropData, acresOwned, acresPlanted);
+        assertEquals(expResult, result);
+    }
+    
+        @Test
+    public void testPlantCrop5() {
+        System.out.println("PlantCrop5");
+        int cropYield = 500;
+        CropData cropData = null;
+        int acresOwned = 500;
+        int acresPlanted = 500;
+        int expResult = 0;
+        int result = CropControl.plantCrop(cropYield, cropData, acresOwned, acresPlanted);
+        assertEquals(expResult, result);
+    }
 }
