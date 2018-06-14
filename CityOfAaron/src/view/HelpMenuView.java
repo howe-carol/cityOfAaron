@@ -5,15 +5,12 @@
  */
 package view;
 
-import byui.cit260.CityOfAaron.model.Game;
 import java.util.Scanner;
-import byui.cit260.CityOfAaron.model.Player;
-
 
 
 /**
  *
- * @author Benjamin
+ * @author Benjamin Wood, Lesson 08: Individual Assignment
  */
 public class HelpMenuView {
     Scanner keyboard = new Scanner (System.in);
