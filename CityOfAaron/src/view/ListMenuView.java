@@ -7,7 +7,6 @@ package view;
 
 import java.util.Scanner;
 import byui.cit260.CityOfAaron.model.*;
-import model.*;
 import control.*;
 
 
