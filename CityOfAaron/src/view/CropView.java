@@ -20,9 +20,8 @@ public class CropView {
     // Get references to the Game object and the CropData object
     private static Game theGame = CityOfAaron.getTheGame();
     private static CropData cropData = theGame.getCropData();
-  
-  
-  /**
+ 
+    /**
     * The buyLandView method
     * Purpose: interface with the user input for buying land
     * Parameters: none
@@ -41,6 +40,7 @@ public class CropView {
     toBuy = keyboard.nextInt();
     // Call the buyLand( ) method in the control layer to buy the land
     CropControl.buyLand(toBuy, price, cropData);
+    
   }
 
   /**
@@ -76,14 +76,15 @@ public class CropView {
     
   /**
     * The runCropsView method()
-    * Purpose: runs the Hamurabi game
+    * Purpose: runs the City of Aaron game
     * Parameters: none
     * Returns: none
     */
     public static void runCropsView()
     {
     // call the buyLandView( ) method
-    buyLandView( );
+    // buyLandView( );
+    sellLandView();
     // add calls to the other crop view methods
     // as they are written
     }
@@ -117,3 +118,4 @@ public class CropView {
     
     
 }
+

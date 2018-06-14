@@ -21,7 +21,7 @@ public class MainMenuView {
     Scanner keyboard = new Scanner (System.in);
     private String theMenu;
     private int max;
-    private String gameMenu;
+    
 
    
     /**
@@ -183,7 +183,7 @@ public class MainMenuView {
         
         // Display the game menu
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.display();
+        gameMenu.displayMenuView();
         
 
         
@@ -235,89 +235,9 @@ public class MainMenuView {
     // =====================================================
     public void displaySaveGameView()
     {
-        System.out.println("\nDisplay list of saved games.");
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.displayMenuView();
+        //System.out.println("\nDisplay the game menu view.");
     }
-
-    private static class GameMenuView {
-        Scanner keyboard = new Scanner (System.in);
-        private String gameMenu;
-        private int max;
-        private int gameMenuOption;
-    
-
-        public GameMenuView() {
-            gameMenu = "\n" +
-            "**********************************\n" +
-            "*   What would you like to do?   *\n" + 
-            "**********************************\n" +
-            " 1 - View the map\n" +
-            " 2 - View/Print a list\n" +
-            " 3 - Move to a new location\n" +
-            " 4 - Manage the Crops\n" +
-            " 5 - Return to the Main menu\n";
-            max = 5;
-        }
-
-        private void display() {
-            int gameOption; 
-            do
-            {
-
-            //Display the menu
-            System.out.println(gameMenu);
-    
-            //Prompt the user and get the user's input
-            gameOption = getGameMenuOption();
-    
-            //Perform the desired action
-            doAction(gameMenuOption);
-    
-            //Determine and display the next view
-            }  
-            while (gameMenuOption != max);
-        }
         
-        public void doAction(int gameOption)
-{
-    switch (gameOption)
-    {
-        case 1: // create and start a new game
-            viewTheMap();
-            break;
-        case 2: // get and start a saved game
-            viewOrPrintAList();
-            break;
-        case 3: // get help menu
-            moveToANewLocation();
-            break;
-        case 4: // save game
-            manageTheCrops();
-            break; 
-        case 5:
-    }
-}
-
-        private void viewTheMap() {
-            
-        }
-
-        private void viewOrPrintAList() {
-            
-        }
-
-        private void moveToANewLocation() {
-            
-        }
-
-        private void manageTheCrops() {
-            
-        }
-
-        private int getGameMenuOption() {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-    }
-
-    
-    
 }

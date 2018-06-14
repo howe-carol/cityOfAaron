@@ -87,13 +87,10 @@ public class Game implements Serializable {
     }
 
     public void setCropData(CropData cropData) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.cropData = cropData;
     }
 
     public CropData getCropData() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return cropData;
     }
-
-       
-    
-} 
+}

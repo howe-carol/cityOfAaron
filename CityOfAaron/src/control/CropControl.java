@@ -147,8 +147,32 @@ public class CropControl {
         return acresOwned;
     }
 
-    public static void buyLand(int toBuy, int price, CropData cropData) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public static int buyLand(int toBuy, int price, CropData cropData) {
+        
+        int acresOwned = cropData.getAcresOwned();
+        int wheatInStore = cropData.getWheatInStore();
+        
+        if (toBuy < 0) {
+            System.out.println("Please enter a positive number.");
+        }
+        
+        if (wheatInStore < price) {
+            System.out.println("The price of land cannot be greater than ammount of wheat in store. Please choose smaller amount.");
+        }
+        
+        if (toBuy * price > wheatInStore) {
+            System.out.println("You don't have enough wheat to buy this ammount of land. Please select less land to buy.");
+        }
+        else{
+        wheatInStore = wheatInStore - (toBuy * price);
+        
+        acresOwned = acresOwned + toBuy;
+        }
+        
+        return acresOwned;
+        
+        
+    
     }
         
         
