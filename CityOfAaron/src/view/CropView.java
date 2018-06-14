@@ -42,6 +42,37 @@ public class CropView {
     // Call the buyLand( ) method in the control layer to buy the land
     CropControl.buyLand(toBuy, price, cropData);
   }
+
+  /**
+ *
+ * @author Benjamin Wood, Lesson 08: Individual Assignment
+ */
+  public static void sellLandView() {
+    int toSell = 0;
+    int enoughLand = 0;
+    int soldAcres = 0;
+    
+    // Ask the user “How many acres of new land do you want sell”?
+    System.out.print("\nHow many acres of new land do you want to sell? ");
+    // User enters a value
+    
+    toSell = keyboard.nextInt();
+    // Make sure the value is positive. If it is not, show a message and ask the user to enter the value again.
+    if (toSell <= 0) {
+        System.out.print("\nPlease type a positive number.");
+        // Make sure that the player has this much land to sell. If not, show a message and ask the player to enter the value again.
+        } else if (cropData.getAcresOwned() > enoughLand){
+                
+                     System.out.print("\nYou don't have enough land.  Please select a small amount.");
+        // Subtract the number of acres sold from the acres owned.
+        } else {
+            soldAcres = cropData.getAcresOwned() - toSell;
+            // Add the wheat from the sale to the wheat in storage.
+            int WheatInStore = cropData.getWheatInStore() + soldAcres;
+            cropData.setWheatInStore(WheatInStore);
+        }
+    
+  }
     
   /**
     * The runCropsView method()
