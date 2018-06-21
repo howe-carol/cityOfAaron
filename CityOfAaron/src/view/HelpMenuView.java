@@ -12,7 +12,7 @@ import java.util.Scanner;
  *
  * @author Benjamin Wood, Lesson 08: Individual Assignment
  */
-public class HelpMenuView {
+public class HelpMenuView extends MenuView {
     Scanner keyboard = new Scanner (System.in);
     private String helpMenu;
     private int max;
@@ -27,7 +27,7 @@ public class HelpMenuView {
     
     public HelpMenuView()
     {
-        helpMenu = "\n" +
+        super( "\n" +
         "**********************************\n" +
         "* CITY OF AARON: HELP MENU       *\n" + 
         "**********************************\n" +
@@ -37,54 +37,10 @@ public class HelpMenuView {
          " 4 - How do I move to another location?\n"+
          " 5 - How do I display a list of animals,\n"+
          "     provisions and tools in the city storehouse?\n"+
-         " 6 - Back to the Main Menu.\n";
-        max = 6;
+         " 6 - Back to the Main Menu.\n",
+        6);
     }
-    public void displayMenuView()
-    {
-        int helpMenuOption; 
-        do
-    {
-
-        //Display the menu
-        System.out.println(helpMenu);
-
-        //Prompt the user and get the user's input
-        helpMenuOption = getHelpMenuOption();
-
-        //Perform the desired action
-        doAction(helpMenuOption);
-
-        //Determine and display the next view
-    }  
-        while (helpMenuOption != max);
-    }
-     /**
-    * The getMenuOption method
-    * Purpose: gets the user's input
-    * Parameters: none
-    * Returns: integer - the option selected */
-    // ===================================
-    public int getHelpMenuOption()
-    {
-        int userInput;
-
-    // begin loop
-        do
-    {
-    // get user input from the keyboard
-        userInput = keyboard.nextInt();
-
-    // if it is not a valid value, output an error message
-        if (userInput < 1 || userInput > max)
-    {
-        System.out.println("\nOption must be between 1 and " + max);
-    }
-    // loop back to the top if input was not valid 
-        } while(userInput < 1 || userInput > max);
-    // return the value input by the user
-        return userInput;
-    }
+    
     /**
     *The doAction method
     * Purpose: performs the selected action 
@@ -92,7 +48,7 @@ public class HelpMenuView {
     * Returns: none
     */
     // ===================================
-    public void doAction(int option)
+    @Override public void doAction(int option)
     {
         switch (option)
         {
