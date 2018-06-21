@@ -74,26 +74,26 @@ public class CropControl {
         //Pre-conditions: Bushels of grain wanted to give people must be positive.
         // and wheat in the wheatStore  <= Bushels of grain wanted to give people 
 
-    public static int feedPeople (int bushels, int wheatForPeople, CropData cropData, int wheatInStore )
-    {
-        // if bushels < 0, return -1
-        // if bushels > wheatInstore, return -1
-        // wheatForPeople = wheatInStore - bushels
-        // return wheatForPeople
+     public static int feedPeople(int wheatForPeople, CropData cropData){
         
-        if(bushels < 0){
+        int wheatInStore = cropData.getWheatInStore(); 
+        
+        if (wheatForPeople < 0) {
             return -1;
         }
         
-       
-         if (bushels > wheatInStore){
+        if (wheatForPeople < wheatInStore) {
+            wheatInStore -= wheatForPeople; 
+            cropData.setWheatInStore(wheatInStore);
+            cropData.setWheatForPeople(wheatForPeople);
+            return cropData.getWheatInStore();
+        }
+        
+        if (wheatInStore < wheatForPeople) {
             return -1;
         }
-         
-         
-        wheatForPeople = wheatInStore -= bushels;
         
-        return wheatInStore;
+        return 0;
     }
     
         /**  Author = Benjamin Wood, Lesson 06: Individual Assignment
@@ -188,7 +188,8 @@ public class CropControl {
         
     
     }
-        
+
+   
         
 }
 
