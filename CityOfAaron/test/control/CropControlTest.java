@@ -232,8 +232,8 @@ public class CropControlTest {
      * Test of plantCrop method, of class CropControl.
      */
     @Test
-    public void testPlantCrop() {
-        System.out.println("plantCrop");
+    public void testPlantCrop1() {
+        System.out.println("plantCrop1");
         int cropYield = 0;
         CropData cropData = null;
         int acresOwned = 0;
@@ -244,8 +244,8 @@ public class CropControlTest {
     }
     
       @Test
-    public void testPlantCrop1() {
-        System.out.println("PlantCrop1");
+    public void testPlantCrop2() {
+        System.out.println("PlantCrop2");
         int cropYield = 45;
         CropData cropData = null;
         int acresOwned = 500;
@@ -290,4 +290,92 @@ public class CropControlTest {
         int result = CropControl.plantCrop(cropYield, cropData, acresOwned, acresPlanted);
         assertEquals(expResult, result);
     }
+    
+     /**
+     * Test of buyLand method, of class CropControl.
+     */
+    @Test
+        public void testBuyLand1()
+        {
+            System.out.println("BuyLand1");
+            CropData theCrops = new CropData();
+            theCrops.setWheatInStore(3000);
+            theCrops.setAcresOwned(2000);
+            int toBuy = 10;
+            int price = 20;
+            int expResult = 2010;
+            int result = CropControl.buyLand(toBuy, price, theCrops);
+            assertEquals(expResult, result);
+    }
+   
+        //Test Input 2
+        @Test
+        public void testBuyLand2()
+        {
+            System.out.println("BuyLand2");
+            CropData theCrops = new CropData();
+            theCrops.setWheatInStore(3000);
+            theCrops.setAcresOwned(2000);
+            int toBuy = -3;
+            int price = 20;
+            int expResult = -1;
+            int result = CropControl.buyLand(toBuy, price, theCrops);
+            assertEquals(expResult, result);
+    }
+         //Test Input 3
+        @Test
+        public void testBuyLand3()
+        {
+            System.out.println("BuyLand3");
+            CropData theCrops = new CropData();
+            theCrops.setWheatInStore(50);
+            theCrops.setAcresOwned(2000);
+            int toBuy = 400;
+            int price = 50;
+            int expResult = -1;
+            int result = CropControl.buyLand(toBuy, price, theCrops);
+            assertEquals(expResult, result);
+    }
+         //Test Input 4
+        @Test
+        public void testBuyLand4()
+        {
+            System.out.println("BuyLand4");
+            CropData theCrops = new CropData();
+            theCrops.setWheatInStore(10000);
+            theCrops.setAcresOwned(2000);
+            int toBuy = 700;
+            int price = 100;
+            int expResult = -1;
+            int result = CropControl.buyLand(toBuy, price, theCrops);
+            assertEquals(expResult, result);
+    }  
+        //Test Input boundary
+        @Test
+        public void testBuyLandBoundary1()
+        {
+            System.out.println("BuyLandBoundary1");
+            CropData theCrops = new CropData();
+            theCrops.setWheatInStore(17);
+            theCrops.setAcresOwned(2000);
+            int toBuy = 0;
+            int price = 17;
+            int expResult = -1;
+            int result = CropControl.buyLand(toBuy, price, theCrops);
+            assertEquals(expResult, result);
+    }  
+        //Test Input boundary
+        @Test
+        public void testBuyLandBoundary2()
+        {
+            System.out.println("BuyLandBoundary2");
+            CropData theCrops = new CropData();
+            theCrops.setWheatInStore(27);
+            theCrops.setAcresOwned(2000);
+            int toBuy = 0;
+            int price = 27;
+            int expResult = -1;
+            int result = CropControl.buyLand(toBuy, price, theCrops);
+            assertEquals(expResult, result);
+    }  
 }

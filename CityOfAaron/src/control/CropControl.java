@@ -102,24 +102,31 @@ public class CropControl {
         *@param percent user's input of percent of offering to give
         *@param cropData total harvest from CropData
         *@return the amount to offer
-        *Pre-conditions:  user input must be positive, < zero and > 100.  The harvest must be positive *and < zero.
+        *Pre-conditions:  user input must be positive, < zero and > 100.
+        * The harvest must be positive *and < zero.
         */
 
     public static int setOffering(int percent, CropData cropData) {
-       
-        int offering = 0;
-        //precondition percent must be between 0 and 100
+               
+        // precondition percent must be between 0 and 100
+        // cropData must be greater than zero
+        // if percent is greater than zero, send error of zero
+        // if user input fails completly, send error of negative one 
+        
+        int offering;
 
-        if (percent > 0 && percent < 100) {
+        if (percent > 0 && percent < 100 && cropData.getHarvest() > 0) {
             offering = (percent * cropData.getHarvest()) / 100;
             cropData.setOffering(offering);
+            
             return offering;
         }
+        
         
         if (percent >= 100){
             return 0;
         }
-                        
+                       
         else{
             return -1;
         }
@@ -153,20 +160,27 @@ public class CropControl {
         int wheatInStore = cropData.getWheatInStore();
         
         if (toBuy < 0) {
-            System.out.println("Please enter a positive number.");
+          //  System.out.println("Please enter a positive number.");
+            return -1;
         }
         
         if (wheatInStore < price) {
-            System.out.println("The price of land cannot be greater than ammount of wheat in store. Please choose smaller amount.");
+           // System.out.println("The price of land cannot be greater
+           // than ammount of wheat in store. Please choose smaller amount.");
+            return -1;
         }
         
         if (toBuy * price > wheatInStore) {
-            System.out.println("You don't have enough wheat to buy this ammount of land. Please select less land to buy.");
+           // System.out.println("You don't have enough wheat to buy this
+           // ammount of land. Please select less land to buy.");
+            return -1;
         }
-        else{
+        else if (price <= 26 && price >= 18 && toBuy * price < wheatInStore) {
         wheatInStore = wheatInStore - (toBuy * price);
-        
         acresOwned = acresOwned + toBuy;
+        
+        } else{
+            return -1;
         }
         
         return acresOwned;
