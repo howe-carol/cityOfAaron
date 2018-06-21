@@ -114,19 +114,20 @@ public class CropView {
     
     public static void feedPeopleView() {
             
-  // GET WHEAT IN STORE
+// GET WHEAT IN STORE
         int wheat = cropData.getWheatInStore();
-  //GET USER'S NUMBER OF BUSHELS
-        System.out.print("How many bushels of grain do you want to five to the people?");
-
-//GET USER'S ANSWER AND SAVE IT
-        int wheatForPeople = keyboard.nextInt();
-//CALL feedPeople() LOCATED IN CONTROL LAYER
-     
-      CropControl.feedPeople (wheatForPeople, cropData);
-    }
+        
+// SHOW WHEAT IN STORE TO USER
+        System.out.format("There are %d bushels of wheat in store.%n", wheat); 
+//HOW MUCH WHEAT TO FEED THE PEOPLE
+        System.out.print("How much wheat would you like to give to the people?");
+//OBTAIN INPUT
+        int wheatForPeople = keyboard.nextInt(); 
+//GIVE WHEAT TO PEOPLE.
+        CropControl.feedPeople(wheatForPeople, cropData); 
+        
 }
-    
+}
     
     
     
