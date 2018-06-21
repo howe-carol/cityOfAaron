@@ -33,7 +33,7 @@ public class GameMenuView {
 
         public void displayMenuView()
     {
-        int gameMenuOption; 
+        int menuOption; 
         do
     {
 
@@ -41,17 +41,17 @@ public class GameMenuView {
         System.out.println(gameMenu);
 
         //Prompt the user and get the user's input
-        gameMenuOption = getGameMenuOption();
+        menuOption = getMenuOption();
 
         //Perform the desired action
-        doAction(gameMenuOption);
+        doAction(menuOption);
 
         //Determine and display the next view
     }  
-        while (gameMenuOption != max);
+        while (menuOption != max);
     }
         
-        public int getGameMenuOption()
+        public int getMenuOption()
     {
         int userInput;
 
@@ -74,9 +74,9 @@ public class GameMenuView {
         
         
         
-        public void doAction(int gameOption)
+        public void doAction(int option)
 {
-    switch (gameOption)
+    switch (option)
     {
         case 1: // create and start a new game
             viewTheMap();
@@ -115,3 +115,4 @@ public class GameMenuView {
         }
    
 }
+
