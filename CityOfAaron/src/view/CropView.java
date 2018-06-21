@@ -112,7 +112,7 @@ public class CropView {
         
     }
     
-            public static void feedPeopleView() {
+    public static void feedPeopleView() {
             
   // GET WHEAT IN STORE
         int wheat = cropData.getWheatInStore();
@@ -123,7 +123,7 @@ public class CropView {
         int wheatForPeople = keyboard.nextInt();
 //CALL feedPeople() LOCATED IN CONTROL LAYER
      
-        CropControl.feedPeople (wheatForPeople, cropData);
+      CropControl.feedPeople (wheatForPeople, cropData);
     }
 }
     
