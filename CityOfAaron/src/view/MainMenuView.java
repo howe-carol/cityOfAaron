@@ -138,8 +138,8 @@ public class MainMenuView extends MenuView {
         System.out.println("Welcome " + name + ", have fun!");
         
         // Display the game menu
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenuView();
+        GameMenuView menu = new GameMenuView();
+        menu.displayMenu();
         
 
         
@@ -191,8 +191,8 @@ public class MainMenuView extends MenuView {
     // =====================================================
     public void displaySaveGameView()
     {
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenuView();
+        GameMenuView menu = new GameMenuView();
+        menu.displayMenu();
         //System.out.println("\nDisplay the game menu view.");
     }
         
