@@ -1,0 +1,80 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package view;
+
+
+
+
+/**
+ *
+ * @author carolhowe
+ */
+public class ListMenuView extends MenuView {
+    
+// The List Menu view will provide a list of options
+
+   ListMenuView() {
+        super("\n" + " CITY OF AARON - LIST MENU\n" +
+                   "1. Animals in the storehouse\n" +
+                   "2. Tools in the storehouse\n" +
+                   "3. Provisions in the storehouse\n" +
+                   "4. Authors of this game\n" +
+                   "5. Quit\n";
+        5);
+        
+   }
+        
+   /**
+   *The doAction method
+   * Purpose: performs the selected action 
+   * Parameters: none
+   * Returns: none
+   */
+   // ===================================
+   @Override public void doAction(int option) {
+       switch (option)
+       {
+// LIST OF ANIMALES
+           case 1: 
+               listAnimals();
+               break;
+// LIST OF TOOLS
+           case 2: 
+               listTools();
+               break;
+// LIST OF PROVISIONS
+           case 3: 
+               listProvisions();
+               break;
+//LIST TEAM
+           case 4: 
+               listTeam();
+               break; 
+           case 5:
+               System.out.println("Main menu"); 
+       }
+
+    public void listAnimals() {
+     System.out.println("list animals");
+    }
+ 
+    public void listTools()
+    {  
+     System.out.println("list tools");
+    }
+ 
+    public void listProvisions()
+    {
+     System.out.println("list provisions");
+    }
+ 
+    public void listTeam()
+    {
+     System.out.println("list team");
+    }
+
+    
+}
