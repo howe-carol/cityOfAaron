@@ -54,19 +54,20 @@ public class GameMenuView extends MenuView {
             }
         }
 
-        private void viewTheMap() {
+        public void viewTheMap() {
             
         }
 
-        private void viewOrPrintAList() {
+        public void viewOrPrintAList() {
+            ListMenuView menu = new ListMenuView();
+            menu.displayMenu();
+        }
+
+        public void moveToANewLocation() {
             
         }
 
-        private void moveToANewLocation() {
-            
-        }
-
-        private void manageTheCrops() {
+        public void manageTheCrops() {
            
          CropView cropData = new CropView();
          cropData.runCropsView();
