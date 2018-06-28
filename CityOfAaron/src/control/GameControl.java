@@ -166,35 +166,35 @@ public class GameControl {
             
             
             // define the string for a undeveloped land location
-            String undeveloped = "You are on the fertile banks of the River.\n" +
-                "In the spring, this low farmland floods and is covered with rich\n" +
-                "new soil. Wheat is planted as far as you can see.";
+            String undeveloped = "You are on the Undeveloped part of the land.\n" +
+                "Making this into fertile land full of life is your job.\n" +
+                "Now that you know the location, what will you do with it?";
     
             // set a ruler's court location with a hint
             loc = new Location();
             loc.setDescription(undeveloped);
-            loc.setSymbol("___");
+            loc.setSymbol("_!_");
             theMap.setLocation(0, 0, loc);
             
             
             
             // define the string for a desert location
-            String desert = "You are on the fertile banks of the River.\n" +
-                "In the spring, this low farmland floods and is covered with rich\n" +
-                "new soil. Wheat is planted as far as you can see.";
+            String desert = "You are on the barren land of the desert.\n" +
+                "This is a no mans land where many people have been lost.\n" +
+                "Do you dare to venture out with only your faith?";
     
             // set a desert location with a hint
             loc = new Location();
             loc.setDescription(desert);
-            loc.setSymbol("_!_");
+            loc.setSymbol("___");
             theMap.setLocation(3, 0, loc);
             
             
             
             // define the string for a lamanites land location
-            String lamanites = "You are on the fertile banks of the River.\n" +
-                "In the spring, this low farmland floods and is covered with rich\n" +
-                "new soil. Wheat is planted as far as you can see.";
+            String lamanites = "You are on the land of the lamanites.\n" +
+                "It will be treterous to set foot in this area. It may be\n" +
+                "the only place to find what you need though.";
     
             // set a lamanites land location with a hint
             loc = new Location();
