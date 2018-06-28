@@ -13,7 +13,7 @@ import byui.cit260.CityOfAaron.model.Map;
 import byui.cit260.CityOfAaron.model.Player;
 import java.util.ArrayList;
 import cityofaaron.CityOfAaron;
-import control.CropControl;
+
 
 /**
  *
@@ -39,7 +39,7 @@ public class GameControl {
         Player thePlayer = new Player();
         thePlayer.setPlayerName(name);
         theGame.setPlayer(thePlayer);
-        
+    }
         // create the CropData object
         public static void createCropDataObject()
         {
