@@ -38,7 +38,7 @@ public class GameControl {
         // create the player object. Save it in the game object
         Player thePlayer = new Player();
         thePlayer.setName(name);
-        theGame.setPlayer(thePlayer);
+        theGame.setThePlayer(thePlayer);
     }
         // create the CropData object
         public static void createCropDataObject()
@@ -202,7 +202,7 @@ public class GameControl {
             loc.setSymbol("%%%");
             theMap.setLocation(4, 2, loc);
             
-            theGame.setMap(theMap);
+            theGame.setTheMap(theMap);
             
             displayMap();
         }
