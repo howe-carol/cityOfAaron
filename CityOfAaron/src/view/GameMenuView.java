@@ -5,6 +5,8 @@
  */
 package view;
 
+import byui.cit260.CityOfAaron.model.Game;
+import byui.cit260.CityOfAaron.model.Map;
 import java.util.Scanner;
 
 /**
@@ -55,7 +57,26 @@ public class GameMenuView extends MenuView {
         }
 
         public void viewTheMap() {
+        
+        Game theGame = cityofaaron.CityOfAaron.getTheGame();        
+        Map theMap = theGame.getTheMap();
+        
+        String columns = "";
+        
+        System.out.println("\nThe Map of the City of Aaron\n");
+                
+        //print each line (row)
+        for(int y = 0; y < 6; y++){
+        
+            //print columns of each row
+            for(int i = 0; i< 5; i++){
+            columns += "|" + theMap.getLocation(y, i).getSymbol();
+            }
             
+            System.out.println(columns + "|");                       
+            columns = "";            
+        }                
+        
         }
 
         public void viewOrPrintAList() {
