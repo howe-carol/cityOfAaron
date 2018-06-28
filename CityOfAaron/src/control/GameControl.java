@@ -37,7 +37,7 @@ public class GameControl {
         
         // create the player object. Save it in the game object
         Player thePlayer = new Player();
-        thePlayer.setPlayerName(name);
+        thePlayer.setName(name);
         theGame.setPlayer(thePlayer);
     }
         // create the CropData object
