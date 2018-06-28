@@ -15,17 +15,19 @@ import java.util.Objects;
  */
 public class Game implements Serializable {   
     
-    private String thePlayer;
+    private Player thePlayer;
     private CropData cropData;
+    private Map theMap;
+    private ArrayList<ListItem> animals;
 
     public Game() {
     }
     
-    public String getThePlayer() {
+    public Player getThePlayer() {
         return thePlayer;
     }
 
-    public  void setThePlayer(String thePlayer) {
+    public  void setThePlayer(Player thePlayer) {
         this.thePlayer = thePlayer;
     }
 
@@ -61,10 +63,7 @@ public class Game implements Serializable {
         return true;
     }
 
-    public void setThePlayer(Player thePlayer) {
-        
-    }
-    
+       
     /**
     * the getCrops() method
     * Purpose: get a reference to the crop object
@@ -95,15 +94,19 @@ public class Game implements Serializable {
         return cropData;
     }
 
-    public void setMap(Map theMap) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+     public Map getTheMap() {
+        return theMap;
+    } 
+        
+    public void setTheMap(Map theMap) {
+        this.theMap = theMap;
     }
 
-    public void setPlayer(Player thePlayer) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public ArrayList<ListItem> getAnimals() {
+        return animals;
     }
 
     public void setAnimals(ArrayList<ListItem> animals) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.animals = animals;
     }
 }

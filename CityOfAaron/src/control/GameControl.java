@@ -33,7 +33,7 @@ public class GameControl {
     {
         // Created the game object. Save it in the main driver file
         theGame = new Game();
-        CityOfAaron.setCurrentGame(theGame);
+        CityOfAaron.setTheGame(theGame);
         
         // create the player object. Save it in the game object
         Player thePlayer = new Player();

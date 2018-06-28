@@ -12,6 +12,7 @@ import byui.cit260.CityOfAaron.model.Game;
 import byui.cit260.CityOfAaron.model.Location;
 import byui.cit260.CityOfAaron.model.Player;
 import byui.cit260.CityOfAaron.model.TeamMember;
+import java.util.Scanner;
 
 
 /**
@@ -19,8 +20,17 @@ import byui.cit260.CityOfAaron.model.TeamMember;
  * @author carolhowe
  */
 public class CityOfAaron {
+    
+    Scanner keyboard = new Scanner(System.in);
 
-    private static Game theGame = null;
+    public static Game getTheGame() {
+        return theGame;
+    }
+
+    public static void setTheGame(Game theGame) {
+        CityOfAaron.theGame = theGame;
+    }
+    private static Game theGame;
     
     public static void main(String[] args) 
     {
@@ -59,16 +69,8 @@ public class CityOfAaron {
   
     }
 
-    public static Game getTheGame() {
-        return theGame;
-    }
-
-    public static void setTheGame(Game theGame) {
-        CityOfAaron.theGame = theGame;
-    }
-
-    public static void setCurrentGame(Game theGame) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        public static void setCurrentGame(Game theGame) {
+        
     }
     
 }
