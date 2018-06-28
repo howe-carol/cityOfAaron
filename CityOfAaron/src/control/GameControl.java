@@ -122,6 +122,7 @@ public class GameControl {
             loc = new Location();
             loc.setDescription(farmland + "\nOne bushel will plant two acres of wheat.");
             loc.setSymbol("!!!");
+            theMap.setLocation(0, 1, loc);
             theMap.setLocation(0, 2, loc);
             
             
@@ -174,7 +175,13 @@ public class GameControl {
             loc = new Location();
             loc.setDescription(undeveloped);
             loc.setSymbol("_!_");
-            theMap.setLocation(0, 0, loc);
+            theMap.setLocation(1, 1, loc);
+            theMap.setLocation(1, 2, loc);
+            theMap.setLocation(1, 3, loc);
+            theMap.setLocation(2, 2, loc);
+            theMap.setLocation(2, 3, loc);
+            theMap.setLocation(3, 2, loc);
+            theMap.setLocation(3, 3, loc);
             
             
             
@@ -187,7 +194,10 @@ public class GameControl {
             loc = new Location();
             loc.setDescription(desert);
             loc.setSymbol("___");
-            theMap.setLocation(3, 0, loc);
+            for(int i = 0; i < MAX_ROW; i++)
+            {
+                theMap.setLocation(i, 0, loc);
+            }
             
             
             
@@ -200,7 +210,9 @@ public class GameControl {
             loc = new Location();
             loc.setDescription(lamanites);
             loc.setSymbol("%%%");
+            theMap.setLocation(4, 1, loc);
             theMap.setLocation(4, 2, loc);
+            theMap.setLocation(4, 3, loc);
             
             theGame.setTheMap(theMap);
             
