@@ -126,53 +126,40 @@ public class GameControl {
             
             
             
-            // define the string for a Wheat Field location
-            String wheatField = "You are on the fertile banks of the River.\n" +
-                "In the spring, this low farmland floods and is covered with rich\n" +
-                "new soil. Wheat is planted as far as you can see.";
-    
-            // set a Wheat Field location with a hint
-            loc = new Location();
-            loc.setDescription(wheatField + “\nOne bushel will plant two acres of wheat.");
-            loc.setSymbol("|||");
-            theMap.setLocation(0, 1, loc);
-            
-            
-            
             // define the string for a granary/storehouse location
-            String granary = "You are on the fertile banks of the River.\n" +
-                "In the spring, this low farmland floods and is covered with rich\n" +
-                "new soil. Wheat is planted as far as you can see.";
+            String granary = "You are on the granary/storehouse for wheat.\n" +
+                "Once you have harvested your fields you may store them here.\n" +
+                "Making sure that you have enough wheat will be beneficial.";
     
             // set a granary/storehouse location with a hint
             loc = new Location();
-            loc.setDescription(granary + “\nOne bushel will plant two acres of wheat.");
+            loc.setDescription(granary);
             loc.setSymbol("+++");
             theMap.setLocation(0, 3, loc);
             
             
             
             // define the string for a village location
-            String village = "You are on the fertile banks of the River.\n" +
-                "In the spring, this low farmland floods and is covered with rich\n" +
-                "new soil. Wheat is planted as far as you can see.";
+            String village = "You are on the busy streets of the village.\n" +
+                "Many people live here as well as more who are moving in.\n" +
+                "It's great to see all the village folk going about their day.";
     
             // set a village location with a hint
             loc = new Location();
-            loc.setDescription(village + “\nOne bushel will plant two acres of wheat.");
+            loc.setDescription(village);
             loc.setSymbol("^^^");
             theMap.setLocation(1, 2, loc);
             
             
             
             // define the string for a ruler's court location
-            String court = "You are on the fertile banks of the River.\n" +
-                "In the spring, this low farmland floods and is covered with rich\n" +
-                "new soil. Wheat is planted as far as you can see.";
+            String court = "You are on the Ruler's Court. From here you can\n" +
+                "check on the status of your people and the fields that you own.\n" +
+                "Be proud of the your people and the effort that they put in.";
     
             // set a ruler's court location with a hint
             loc = new Location();
-            loc.setDescription(court + “\nOne bushel will plant two acres of wheat.");
+            loc.setDescription(court);
             loc.setSymbol("###");
             theMap.setLocation(1, 3, loc);
                 
@@ -185,7 +172,7 @@ public class GameControl {
     
             // set a ruler's court location with a hint
             loc = new Location();
-            loc.setDescription(undeveloped + “\nOne bushel will plant two acres of wheat.");
+            loc.setDescription(undeveloped);
             loc.setSymbol("___");
             theMap.setLocation(0, 0, loc);
             
@@ -198,7 +185,7 @@ public class GameControl {
     
             // set a desert location with a hint
             loc = new Location();
-            loc.setDescription(desert + “\nOne bushel will plant two acres of wheat.");
+            loc.setDescription(desert);
             loc.setSymbol("_!_");
             theMap.setLocation(3, 0, loc);
             
@@ -211,7 +198,7 @@ public class GameControl {
     
             // set a lamanites land location with a hint
             loc = new Location();
-            loc.setDescription(lamanites + “\nOne bushel will plant two acres of wheat.");
+            loc.setDescription(lamanites);
             loc.setSymbol("%%%");
             theMap.setLocation(4, 2, loc);
             
