@@ -59,6 +59,10 @@ public class Player implements Serializable {
         }
         return true;
     }
+
+    public void setPlayerName(String name) {
+        
+    }
     
     
     

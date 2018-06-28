@@ -12,6 +12,7 @@ import java.util.Scanner; //import gameproject.GameProject;
 import cityofaaron.CityOfAaron;
 import byui.cit260.CityOfAaron.model.Player;//import model.Player;
 import byui.cit260.CityOfAaron.model.Game; // import cityofaaron.CityOfAaron;
+import control.GameControl;
 
 /**
  *
@@ -91,14 +92,6 @@ public class MainMenuView extends MenuView {
     // =====================================================
     public void startNewGame()
     {
-        // Create a new Game object.
-        Game theGame = new Game();
-        
-
-        
-        // Save a reference to it in the GameProject class.
-        CityOfAaron.setTheGame(theGame);
-        
         // Display the Banner Page.
         System.out.println("\n" +
          "************************************************\n" +
@@ -120,22 +113,16 @@ public class MainMenuView extends MenuView {
          "*          Rats like to eat your wheat!        *\n" +
          "************************************************\n");
         
-        // create a new Player object
-        Player thePlayer = new Player();
-        
         // Prompt for and get the user's name.
         String name;
         System.out.println("Please type in your first name: ");
         name = keyboard.next();
         
-        // Save the user's name in the Player object
-        thePlayer.setName(name);
-        
-        // Save a reference to the player object in the Game object.
-        theGame.setThePlayer(thePlayer);
-        
         // Display a welcome message
         System.out.println("Welcome " + name + ", have fun!");
+        
+        // call the createNewGame( ) method. Pass the name as a parameter
+        GameControl.createNewGame(name);
         
         // Display the game menu
         GameMenuView menu = new GameMenuView();
@@ -143,7 +130,7 @@ public class MainMenuView extends MenuView {
         
 
         
-        
+        /*
         // Create a CropData object,
         CropData cropData = new CropData();
         // initialize it
@@ -161,7 +148,7 @@ public class MainMenuView extends MenuView {
         cropData.setAcresPlanted(1000);
         // save a reference to it in the Game
         theGame.setCropData(cropData); 
-        
+        */
     }
     
     // The startSavedGame method

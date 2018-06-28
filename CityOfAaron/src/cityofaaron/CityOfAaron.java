@@ -66,5 +66,9 @@ public class CityOfAaron {
     public static void setTheGame(Game theGame) {
         CityOfAaron.theGame = theGame;
     }
+
+    public static void setCurrentGame(Game theGame) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

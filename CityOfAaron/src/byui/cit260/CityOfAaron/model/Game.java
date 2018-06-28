@@ -6,6 +6,7 @@
 package byui.cit260.CityOfAaron.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
@@ -92,5 +93,17 @@ public class Game implements Serializable {
 
     public CropData getCropData() {
         return cropData;
+    }
+
+    public void setMap(Map theMap) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setPlayer(Player thePlayer) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setAnimals(ArrayList<ListItem> animals) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
