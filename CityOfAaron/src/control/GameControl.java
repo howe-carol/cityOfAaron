@@ -120,7 +120,7 @@ public class GameControl {
     
             // set a farmland location with a hint
             loc = new Location();
-            loc.setDescription(farmland + “\nOne bushel will plant two acres of wheat.");
+            loc.setDescription(farmland + "\nOne bushel will plant two acres of wheat.");
             loc.setSymbol("!!!");
             theMap.setLocation(0, 2, loc);
             
