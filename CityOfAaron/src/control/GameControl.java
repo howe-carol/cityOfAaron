@@ -17,7 +17,7 @@ import cityofaaron.CityOfAaron;
 public class GameControl {
     // size of the Locations array
     private static final int MAX_ROW = 5;
-    private static final int MAX_COL = 5;
+    private static final int MAX_COL = 8;
 
     // reference to a Game object
     private static Game theGame;
@@ -76,6 +76,11 @@ public class GameControl {
             // Save the animals in the game
             theGame.setAnimals(animals);
         }
+        public void displayAnimalList() {
+        for (ListItem animal : theGame.getAnimals()) {
+            System.out.println(animal.getName() + ": " + animal.getNumber());
+        }  
+    }
         
         // create the list of tools
         //@author Benjamin
@@ -90,6 +95,11 @@ public class GameControl {
             // Save the animals in the game
             theGame.setTools(tools);
         }
+        public void displayToolList() {
+        for (ListItem tool: theGame.getTools()) {
+            System.out.println(tool.getName() + ": " + tool.getNumber());
+        }  
+    }
         //create the list of provisions
         
         // create the Locations and the Map object
@@ -236,22 +246,22 @@ public class GameControl {
             {
                 theMap.setLocation(i, 0, loc);
             }
+            
             theGame.setTheMap(theMap);
             
           
         }
 
         public void displayMap() {
-        Game theGame = CityOfAaron.getTheGame();
         Map theMap = theGame.getTheMap();
         System.out.println("City of Aaron Map");
         String columns = "";
                 
         //print each line (row)
-        for(int i = 0; i < 7; i++){
+        for(int i = 0; i < 5; i++){
         
             //print columns of each row
-            for(int j = 0; j< 7; j++){
+            for(int j = 0; j< 8; j++){
             columns += "|" + theMap.getLocation(i, j).getSymbol();
             }
             

@@ -7,12 +7,9 @@
 
 package view;
 
-import byui.cit260.CityOfAaron.model.CropData;
-import java.util.Scanner; //import gameproject.GameProject;
-import cityofaaron.CityOfAaron;
-import byui.cit260.CityOfAaron.model.Player;//import model.Player;
-import byui.cit260.CityOfAaron.model.Game; // import cityofaaron.CityOfAaron;
-import control.GameControl;
+import byui.cit260.CityOfAaron.model.*;
+import java.util.Scanner; 
+import control.*;
 
 /**
  *
