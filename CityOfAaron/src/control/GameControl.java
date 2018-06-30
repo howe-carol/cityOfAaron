@@ -68,18 +68,23 @@ public class GameControl {
         public static void createAnimalList()
         {
             ArrayList<ListItem> animals = new ArrayList<ListItem>();
-            animals.add(new ListItem("cows", 12));
-            animals.add(new ListItem("horses", 3));
-            animals.add(new ListItem("pigs", 7));
-            animals.add(new ListItem("goats", 4));
+            animals.add(new ListItem("Cattle", 12));
+            animals.add(new ListItem("Donkeys", 3));
+            animals.add(new ListItem("Sheep", 7));
+            animals.add(new ListItem("Goats", 4));
         
             // Save the animals in the game
             theGame.setAnimals(animals);
         }
+        
         public void displayAnimalList() {
+            System.out.println("***********************************\n"+
+                               "* This is a list of your animals: *\n"+
+                               "***********************************");
         for (ListItem animal : theGame.getAnimals()) {
             System.out.println(animal.getName() + ": " + animal.getNumber());
-        }  
+        } 
+        
     }
         
         // create the list of tools
