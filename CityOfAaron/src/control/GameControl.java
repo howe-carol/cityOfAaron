@@ -5,6 +5,7 @@
  */
 package control;
 
+import byui.cit260.CityOfAaron.model.*;
 import byui.cit260.CityOfAaron.model.CropData;
 import byui.cit260.CityOfAaron.model.Game;
 import byui.cit260.CityOfAaron.model.ListItem;
@@ -77,8 +78,31 @@ public class GameControl {
         }
         
         // create the list of tools
-        //create the list of provisions
+        //@author Benjain
+        public static void createToolList()
+        {
+            ArrayList<ListItem> tools = new ArrayList<ListItem>();
+            tools.add(new ListItem("hammer", 1));
+            tools.add(new ListItem("axe", 1));
+            tools.add(new ListItem("knife", 3));
+            tools.add(new ListItem("shield", 1));
         
+            // Save the animals in the game
+            theGame.setTools(tools);
+        }
+        //create the list of provisions
+        //@author Benjain
+        public static void createProvisionList()
+        {
+            ArrayList<ListItem> provisions = new ArrayList<ListItem>();
+            provisions.add(new ListItem("bread", 1));
+            provisions.add(new ListItem("cream", 1));
+            provisions.add(new ListItem("cheese", 3));
+            provisions.add(new ListItem("water", 1));
+        
+            // Save the animals in the game
+            theGame.setProvisions(provisions);
+        }
         // create the Locations and the Map object
         
         /**
