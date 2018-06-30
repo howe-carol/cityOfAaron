@@ -5,11 +5,13 @@
  */
 package byui.cit260.CityOfAaron.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Benjamin Wood, Carol Howe, Tiffany Romrell
  */
-public class Map {
+public class Map implements Serializable {
     private int rowCount;//stores the number of rows
     private int colCount;//stores the number of columns
     private Location[][]locations;//a reference to a 2-dimensinal array
@@ -21,7 +23,7 @@ public class Map {
      * Parameters: none
      * Returns: none
      */
-    public Map(){};
+   // public Map(){};
     
     /**
      * parameterized Map constructor
@@ -69,4 +71,9 @@ public class Map {
     {
         this.locations[row][col] = _location;
     } 
+    
+    @Override
+    public String toString() {
+        return "Map{" + "rowCount=" + rowCount + ", colCount=" + colCount + ", locations=" + locations + '}';
+    }
 }

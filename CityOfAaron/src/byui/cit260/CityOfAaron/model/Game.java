@@ -42,7 +42,7 @@ public class Game implements Serializable {
 
     @Override
     public String toString() {
-        return "Game{" + "thePlayer=" + thePlayer + '}';
+        return "Game{" + "theMap=" + theMap + ", thePlayer=" + thePlayer + ", cropData=" + cropData + ", animals=" + animals + ", tools=" + tools + '}';
     }
     
     
@@ -120,11 +120,5 @@ public class Game implements Serializable {
         this.tools = tools;
     }
     
-    public ArrayList<ListItem> getProvisions() {
-        return provisions;
-    }
-
-    public void setProvisions(ArrayList<ListItem> provisions) {
-        this.provisions = provisions;
-    }
+    
 }

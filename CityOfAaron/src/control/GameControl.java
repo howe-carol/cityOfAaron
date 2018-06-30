@@ -6,12 +6,6 @@
 package control;
 
 import byui.cit260.CityOfAaron.model.*;
-import byui.cit260.CityOfAaron.model.CropData;
-import byui.cit260.CityOfAaron.model.Game;
-import byui.cit260.CityOfAaron.model.ListItem;
-import byui.cit260.CityOfAaron.model.Location;
-import byui.cit260.CityOfAaron.model.Map;
-import byui.cit260.CityOfAaron.model.Player;
 import java.util.ArrayList;
 import cityofaaron.CityOfAaron;
 
@@ -40,6 +34,12 @@ public class GameControl {
         Player thePlayer = new Player();
         thePlayer.setName(name);
         theGame.setThePlayer(thePlayer);
+        createCropDataObject();
+        createMap();
+        createAnimalList();
+        createToolList();
+        //createProvisionList();
+        //createTeamList();
     }
         // create the CropData object
         public static void createCropDataObject()
@@ -82,10 +82,10 @@ public class GameControl {
         public static void createToolList()
         {
             ArrayList<ListItem> tools = new ArrayList<ListItem>();
-            tools.add(new ListItem("hammer", 1));
-            tools.add(new ListItem("axe", 1));
-            tools.add(new ListItem("knife", 3));
-            tools.add(new ListItem("shield", 1));
+            tools.add(new ListItem("Hammer", 1));
+            tools.add(new ListItem("Axe", 1));
+            tools.add(new ListItem("Knife", 3));
+            tools.add(new ListItem("Shovel", 1));
         
             // Save the animals in the game
             theGame.setTools(tools);
@@ -121,7 +121,7 @@ public class GameControl {
             // set this location object in each cell of the array in column 4
             for(int i = 0; i < MAX_ROW; i++)
             {
-                theMap.setLocation(i, 4, loc);
+                theMap.setLocation(i, 7, loc);
             }
             
             
@@ -135,8 +135,10 @@ public class GameControl {
             loc = new Location();
             loc.setDescription(farmland + "\nOne bushel will plant two acres of wheat.");
             loc.setSymbol("!!!");
-            theMap.setLocation(0, 1, loc);
-            theMap.setLocation(0, 2, loc);
+            for(int i = 0; i < MAX_ROW; i++)
+            {
+                theMap.setLocation(i, 6, loc);
+            }
             
             
             
@@ -149,7 +151,10 @@ public class GameControl {
             loc = new Location();
             loc.setDescription(granary);
             loc.setSymbol("+++");
-            theMap.setLocation(0, 3, loc);
+            for(int i = 0; i < MAX_ROW; i++)
+            {
+                theMap.setLocation(i, 5, loc);
+            }
             
             
             
@@ -162,7 +167,10 @@ public class GameControl {
             loc = new Location();
             loc.setDescription(village);
             loc.setSymbol("^^^");
-            theMap.setLocation(1, 2, loc);
+            for(int i = 0; i < MAX_ROW; i++)
+            {
+                theMap.setLocation(i, 4, loc);
+            }
             
             
             
@@ -175,7 +183,10 @@ public class GameControl {
             loc = new Location();
             loc.setDescription(court);
             loc.setSymbol("###");
-            theMap.setLocation(1, 3, loc);
+            for(int i = 0; i < MAX_ROW; i++)
+            {
+                theMap.setLocation(i, 3, loc);
+            }
                 
             
             
@@ -188,13 +199,10 @@ public class GameControl {
             loc = new Location();
             loc.setDescription(undeveloped);
             loc.setSymbol("_!_");
-            theMap.setLocation(1, 1, loc);
-            theMap.setLocation(1, 2, loc);
-            theMap.setLocation(1, 3, loc);
-            theMap.setLocation(2, 2, loc);
-            theMap.setLocation(2, 3, loc);
-            theMap.setLocation(3, 2, loc);
-            theMap.setLocation(3, 3, loc);
+            for(int i = 0; i < MAX_ROW; i++)
+            {
+                theMap.setLocation(i, 2, loc);
+            }
             
             
             
@@ -209,7 +217,7 @@ public class GameControl {
             loc.setSymbol("___");
             for(int i = 0; i < MAX_ROW; i++)
             {
-                theMap.setLocation(i, 0, loc);
+                theMap.setLocation(i, 1, loc);
             }
             
             
@@ -223,17 +231,33 @@ public class GameControl {
             loc = new Location();
             loc.setDescription(lamanites);
             loc.setSymbol("%%%");
-            theMap.setLocation(4, 1, loc);
-            theMap.setLocation(4, 2, loc);
-            theMap.setLocation(4, 3, loc);
-            
+           
+            for(int i = 0; i < MAX_ROW; i++)
+            {
+                theMap.setLocation(i, 0, loc);
+            }
             theGame.setTheMap(theMap);
             
-            displayMap();
+          
         }
 
-    private static void displayMap() {
+        public void displayMap() {
+        Game theGame = CityOfAaron.getTheGame();
+        Map theMap = theGame.getTheMap();
+        System.out.println("City of Aaron Map");
+        String columns = "";
+                
+        //print each line (row)
+        for(int i = 0; i < 7; i++){
         
+            //print columns of each row
+            for(int j = 0; j< 7; j++){
+            columns += "|" + theMap.getLocation(i, j).getSymbol();
+            }
+            
+            System.out.println(columns + "|");                       
+            columns = "";            
+        }            
     }
         
 

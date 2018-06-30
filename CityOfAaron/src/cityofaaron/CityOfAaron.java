@@ -9,6 +9,7 @@ import view.*;
 import byui.cit260.CityOfAaron.model.ListItem;
 import byui.cit260.CityOfAaron.model.CropData;
 import byui.cit260.CityOfAaron.model.Game;
+import byui.cit260.CityOfAaron.model.Map;
 import byui.cit260.CityOfAaron.model.Location;
 import byui.cit260.CityOfAaron.model.Player;
 import byui.cit260.CityOfAaron.model.TeamMember;
@@ -66,8 +67,14 @@ public class CityOfAaron {
         newLocation.getSymbol();
         System.out.println("The location is:" + newLocation + "Built by Carol Howe");
        
-  
+             
+           
     }
+    private static void displayMap() {
+            displayMap();
+        
+    }
+    
 
         public static void setCurrentGame(Game theGame) {
         
