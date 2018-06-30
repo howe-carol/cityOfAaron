@@ -96,8 +96,11 @@ public class GameControl {
             theGame.setTools(tools);
         }
         public void displayToolList() {
+            System.out.println("********************************\n"+
+                               "*This is a list of your tools: *\n"+
+                               "********************************");
         for (ListItem tool: theGame.getTools()) {
-            System.out.println(tool.getName() + ": " + tool.getNumber());
+        System.out.println(tool.getName() + ": " + tool.getNumber());
         }  
     }
         //create the list of provisions

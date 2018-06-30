@@ -62,7 +62,13 @@ public class GameMenuView extends MenuView {
         theGameControl.displayMap();
         
     }
-
+         /**
+        *The viewList() method
+        * Purpose: Creates a ViewListobject and calls its
+        * displayMenuView( ) method
+        * Parameters: none
+        * Returns: none
+        */
         public void viewOrPrintAList() {
             ListMenuView menu = new ListMenuView();
             menu.displayMenu();

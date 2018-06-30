@@ -5,6 +5,8 @@
  */
 package view;
 
+import control.GameControl;
+
 
 
 
@@ -18,7 +20,10 @@ public class ListMenuView extends MenuView {
 // The List Menu view will provide a list of options
 
    ListMenuView() {
-        super("\n" + " CITY OF AARON - LIST MENU\n" +
+        super("\n" + 
+                   "******************************\n" +
+                   "* CITY OF AARON - LIST MENU  *\n" +
+                   "******************************\n"+
                    "1. Animals in the storehouse\n" +
                    "2. Tools in the storehouse\n" +
                    "3. Provisions in the storehouse\n" +
@@ -55,7 +60,8 @@ public class ListMenuView extends MenuView {
     }
 
     public void listTools() {
-             System.out.println("list tools");
+        GameControl theGameControl = new GameControl();
+        theGameControl.displayToolList();
     }
 
     public void listProvisions() {
