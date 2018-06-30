@@ -78,7 +78,7 @@ public class GameControl {
         }
         
         // create the list of tools
-        //@author Benjain
+        //@author Benjamin
         public static void createToolList()
         {
             ArrayList<ListItem> tools = new ArrayList<ListItem>();
@@ -91,18 +91,7 @@ public class GameControl {
             theGame.setTools(tools);
         }
         //create the list of provisions
-        //@author Benjain
-        public static void createProvisionList()
-        {
-            ArrayList<ListItem> provisions = new ArrayList<ListItem>();
-            provisions.add(new ListItem("bread", 1));
-            provisions.add(new ListItem("cream", 1));
-            provisions.add(new ListItem("cheese", 3));
-            provisions.add(new ListItem("water", 1));
         
-            // Save the animals in the game
-            theGame.setProvisions(provisions);
-        }
         // create the Locations and the Map object
         
         /**
