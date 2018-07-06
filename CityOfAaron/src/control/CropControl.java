@@ -157,35 +157,24 @@ public class CropControl {
 
     public static void buyLand(int toBuy, int price, CropData cropData) throws CropException{
         
-        int acresOwned = cropData.getAcresOwned();
-       
-        
-            // check parameters - do they meet the contract
+        // check parameters - do they meet the contract
         if (toBuy < 0) 
             throw new CropException("You must enter a positive number.");
         
         int wheatInStore = cropData.getWheatInStore();
-        
-        if (wheatInStore < price) {
-           // System.out.println("The price of land cannot be greater
-           // than ammount of wheat in store. Please choose smaller amount.");
-            return -1;
-        }
-        
+             
         if (toBuy * price > wheatInStore) 
             throw new CropException("There is insufficient wheat to buy this much land.");
-        else if (price <= 26 && price >= 18 && toBuy * price < wheatInStore) {
-        wheatInStore = wheatInStore - (toBuy * price);
-        acresOwned = acresOwned + toBuy;
         
-        } else{
-            return -1;
-        }
+        // add the number of acres to buy to current number of acres
+        int acresOwned = cropData.getAcresOwned();
+        acresOwned += toBuy;
+        cropData.setAcresOwned(acresOwned);
         
-        return acresOwned;
-        
-        
-    
+        // deduct cost from wheatInStore
+        wheatInStore = cropData.getWheatInStore();
+        wheatInStore -= (toBuy * price);
+        cropData.setWheatInStore(wheatInStore);
     }
 
    
