@@ -6,6 +6,7 @@
 package control;
 
 import byui.cit260.CityOfAaron.model.CropData;
+import exceptions.CropException;
 import java.util.Random;
 
 // The CropControl class - part of the control layer
@@ -154,15 +155,16 @@ public class CropControl {
         return acresOwned;
     }
 
-    public static int buyLand(int toBuy, int price, CropData cropData) {
+    public static void buyLand(int toBuy, int price, CropData cropData) throws CropException{
         
         int acresOwned = cropData.getAcresOwned();
-        int wheatInStore = cropData.getWheatInStore();
+       
         
-        if (toBuy < 0) {
-          //  System.out.println("Please enter a positive number.");
-            return -1;
-        }
+            // check parameters - do they meet the contract
+        if (toBuy < 0) 
+            throw new CropException("You must enter a positive number.");
+        
+        int wheatInStore = cropData.getWheatInStore();
         
         if (wheatInStore < price) {
            // System.out.println("The price of land cannot be greater
@@ -170,11 +172,8 @@ public class CropControl {
             return -1;
         }
         
-        if (toBuy * price > wheatInStore) {
-           // System.out.println("You don't have enough wheat to buy this
-           // ammount of land. Please select less land to buy.");
-            return -1;
-        }
+        if (toBuy * price > wheatInStore) 
+            throw new CropException("There is insufficient wheat to buy this much land.");
         else if (price <= 26 && price >= 18 && toBuy * price < wheatInStore) {
         wheatInStore = wheatInStore - (toBuy * price);
         acresOwned = acresOwned + toBuy;
