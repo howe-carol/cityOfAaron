@@ -97,39 +97,33 @@ public class CropControl {
         return 0;
     }
     
-        /**  Author = Benjamin Wood, Lesson 06: Individual Assignment
+        /**  Author = Benjamin Wood, Lesson 11: Individual Assignment
         *setOffering method
         *Purpose: to set the user’s offerings amount
         *@param percent user's input of percent of offering to give
         *@param cropData total harvest from CropData
-        *@return the amount to offer
         *Pre-conditions:  user input must be positive, < zero and > 100.
         * The harvest must be positive *and < zero.
+        * @throws exceptions.CropException
         */
 
-    public static int setOffering(int percent, CropData cropData) {
-               
+    public static void setOffering(int percent, CropData cropData) throws CropException {
+        
         // precondition percent must be between 0 and 100
+        if (percent < 0 || percent > 100)
+            throw new CropException("You must enter a positive number less than 100.");
+        // if percent is equal to 100, tell the user they cannot offer all their harvest
+        if (percent == 100)
+            throw new CropException("You cannot offer all your harvest.");
+        // if percent is equal to zero, send error of zero offerings
+        if (percent == 0 )
+            throw new CropException("You have selected not to give any offerings.");
         // cropData must be greater than zero
-        // if percent is greater than zero, send error of zero
-        // if user input fails completly, send error of negative one 
-        
-        int offering;
-
         if (percent > 0 && percent < 100 && cropData.getHarvest() > 0) {
-            offering = (percent * cropData.getHarvest()) / 100;
-            cropData.setOffering(offering);
+            percent *= cropData.getHarvest() / 100;
             
-            return offering;
-        }
-        
-        
-        if (percent >= 100){
-            return 0;
-        }
-                       
-        else{
-            return -1;
+            cropData.setOffering(percent);
+            
         }
         
     }

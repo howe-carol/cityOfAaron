@@ -10,6 +10,7 @@ import control.*;
 import java.util.Scanner;
 import cityofaaron.CityOfAaron;
 import exceptions.CropException;
+import java.io.PrintStream;
 /**
  *
  * @author Benjamin
@@ -29,39 +30,39 @@ public class CropView {
     * Returns: none
     */
 
-  public static void buyLandView()
-  {
-    // Get the cost of land for this round.
-      int price = CropControl.calcLandPrice();
-    // Prompt the user to enter the number of acres to buy
-    System.out.format("Land is selling for %d bushels per acre.%n",price);
-    
-    int toBuy;
-    boolean paramsNotOkay;
-    do
-        {
-        paramsNotOkay = false;
-        // Get the user’s input and save it.
-        System.out.print("\nHow many acres of land do you wish to buy? ");
-        toBuy = keyboard.nextInt();
-        try
-        {
-        CropControl.buyLand(toBuy, price, cropData);
-        }
-        catch(CropException e)
-        {
-        System.out.println("I am sorry master, I cannot do this.");
-        System.out.println(e.getMessage());
-        paramsNotOkay = true;
-        }
-        } while(paramsNotOkay);
-  }
+    public static void buyLandView()
+    {
+      // Get the cost of land for this round.
+        int price = CropControl.calcLandPrice();
+      // Prompt the user to enter the number of acres to buy
+      System.out.format("Land is selling for %d bushels per acre.%n",price);
 
-  /**
- *
- * @author Benjamin Wood, Lesson 08: Individual Assignment
- */
-  public static void sellLandView() {
+      int toBuy;
+      boolean paramsNotOkay;
+      do
+          {
+          paramsNotOkay = false;
+          // Get the user’s input and save it.
+          System.out.print("\nHow many acres of land do you wish to buy? ");
+          toBuy = keyboard.nextInt();
+          try
+          {
+          CropControl.buyLand(toBuy, price, cropData);
+          }
+          catch(CropException e)
+          {
+          System.out.println("I am sorry master, I cannot do this.");
+          System.out.println(e.getMessage());
+          paramsNotOkay = true;
+          }
+          } while(paramsNotOkay);
+    }
+
+    /**
+   *
+   * @author Benjamin Wood, Lesson 08: Individual Assignment
+   */
+    public static void sellLandView() {
     int toSell = 0;
     int enoughLand = 0;
     int soldAcres = 0;
@@ -88,21 +89,28 @@ public class CropView {
     
   }
     
-  /**
-    * The runCropsView method()
-    * Purpose: runs the City of Aaron game
-    * Parameters: none
-    * Returns: none
-    */
-    public static void runCropsView()
-    {
-    // call the buyLandView( ) method
-    buyLandView( );
-    sellLandView();
-    // add calls to the other crop view methods
-    // as they are written
+    public static void setOfferingView(){
+        int percent;
+        
+        boolean paramsNotOkay;
+        do{
+            paramsNotOkay = false;
+            //  prompt user to enter the percent of harvest for offerings
+            System.out.print("\nWhat Percentage(0-100%) of your harvest do you want to give as offerings? ");
+            //  save user input
+            percent = keyboard.nextInt();
+            try {
+            //  call setOffering()
+            CropControl.setOffering(percent, cropData);
+            } catch(CropException e)
+            {
+            System.out.println("I am sorry master, I cannot do this.");
+            System.out.println(e.getMessage());
+            paramsNotOkay = true;
+            }
+            } while(paramsNotOkay);
     }
-    
+  
     public void plantCropsView()
     {
         /**
@@ -141,6 +149,22 @@ public class CropView {
         CropControl.feedPeople(wheatForPeople, cropData); 
         
 }
+    /**
+    * The runCropsView method()
+    * Purpose: runs the City of Aaron game
+    * Parameters: none
+    * Returns: none
+    */
+    public static void runCropsView()
+    {
+    // call the buyLandView( ) method
+    buyLandView( );
+    sellLandView();
+    setOfferingView();
+    // add calls to the other crop view methods
+    // as they are written
+    }
+    
 }
     
     
