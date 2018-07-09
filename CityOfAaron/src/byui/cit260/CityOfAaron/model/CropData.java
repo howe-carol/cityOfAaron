@@ -274,6 +274,10 @@ public class CropData implements Serializable{
     public void setYears(int i) {
        
     }
+
+    public void plantCrop(int acresOwned) {
+        
+    }
     
     
 

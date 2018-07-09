@@ -127,27 +127,6 @@ public class CropControl {
         }
         
     }
- 
-       public static int plantCrop (int cropYield, CropData cropData, int acresOwned, int acresPlanted){
-        // Author = Tiffany Romrell, Lesson 06: Individual Assignment
-        //plantCrop method
- 
-         if (acresOwned < cropYield){
-             return -1;
-         }
-         
-         if (acresPlanted < cropYield){
-             return -1;
-         }
-         
-         if (acresOwned < acresPlanted){
-             return -1;
-         }
-         
-        acresOwned = cropYield - acresPlanted;
-        
-        return acresOwned;
-    }
 
     public static void buyLand(int toBuy, int price, CropData cropData) throws CropException{
         
@@ -169,6 +148,28 @@ public class CropControl {
         wheatInStore = cropData.getWheatInStore();
         wheatInStore -= (toBuy * price);
         cropData.setWheatInStore(wheatInStore);
+    }
+
+
+    public static void plantCrop(int acresOwned, int acresPlanted, int cropYield, CropData cropData) throws CropException{
+         // Author = Tiffany Romrell, Lesson 06: Individual Assignment
+        //plantCrop method
+ 
+         if (acresOwned < cropYield){
+             throw new CropException("You must enter a postive number or you have exceeded the total amount of crops available.");
+         }
+         
+         if (acresPlanted < cropYield){
+             throw new CropException("You must enter a postive number or you have exceeded the total amount of crops available.");
+         }
+         
+         if (acresOwned < acresPlanted){
+             throw new CropException("You must enter a postive number and can not exceed the amount of land available.");
+         }
+         
+        acresOwned = cropYield - acresPlanted;
+        
+        cropData.plantCrop(cropYield);
     }
 
    

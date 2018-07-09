@@ -111,7 +111,7 @@ public class CropView {
             } while(paramsNotOkay);
     }
   
-    public void plantCropsView()
+    public static void plantCropsView()
     {
         /**
         *
@@ -123,7 +123,61 @@ public class CropView {
         int acresOwned
         int acresPlanted
         */
+        int cropYield;
+        int acresOwned = 0;
+        int acresPlanted = 0;
         
+        boolean paramsNotOkay;
+        do{
+            paramsNotOkay = false;
+            //  prompt user to enter the amount of crops that they would like to plant
+            System.out.print("\nHow many crops would you like to plant? ");
+            //  save user input
+            cropYield = keyboard.nextInt();
+            try {
+            //  call plantCrop()
+            CropControl.plantCrop(cropYield, acresOwned, acresPlanted, cropData);
+            } 
+            catch(CropException e)
+            {
+                System.out.println("I am sorry master, I cannot do this.");
+                System.out.println(e.getMessage());
+                paramsNotOkay = true;
+            }
+            
+            } while(paramsNotOkay);
+        
+        
+        /*
+         // Get the amount of crops that can be planted.
+        int acresOwned = CropControl.plantCrop();
+      // Prompt the user to enter the number of acres to buy
+      System.out.format("This is how much land that you can plant crops on.%n",acresOwned);
+      
+      
+      int acresPlanted;
+      int cropYield;
+      boolean paramsNotOkay;
+      do
+          {
+          paramsNotOkay = false;
+          // Get the user’s input and save it.
+          System.out.print("\nHow many crops would you like to plant? ");
+          cropYield = keyboard.nextInt();
+          try
+          {
+          CropControl.plantCrop(int cropYield, int acresOwned, int acresPlanted, cropData);
+          }
+          catch(CropException e)
+          {
+            System.out.println("I am sorry master, I cannot do this.");
+            System.out.println(e.getMessage());
+            paramsNotOkay = true;
+          }
+          } while(paramsNotOkay);
+        */
+        
+        /*
         int acresPlanted = CropControl.plantCrop(0, cropData, 0, 0);
         int acresOwned;
         
@@ -131,7 +185,7 @@ public class CropView {
         
         int cropYield;
         cropYield = keyboard.nextInt();
-        
+        */
     }
     
     public static void feedPeopleView() {
@@ -161,6 +215,7 @@ public class CropView {
     buyLandView( );
     sellLandView();
     setOfferingView();
+    plantCropsView();
     // add calls to the other crop view methods
     // as they are written
     }
