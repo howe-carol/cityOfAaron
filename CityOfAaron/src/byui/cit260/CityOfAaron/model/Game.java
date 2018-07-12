@@ -20,7 +20,7 @@ public class Game implements Serializable {
     private Map theMap;
     private ArrayList<ListItem> animals;
     private ArrayList<ListItem> tools;
-    private ArrayList<ListItem> provision;
+    //private ArrayList<ListItem> provision;
 
     public Game() {
     }

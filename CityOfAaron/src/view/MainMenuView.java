@@ -54,6 +54,7 @@ public class MainMenuView extends MenuView {
    * Purpose: performs the selected action 
    * Parameters: none
    * Returns: none
+     * @param option
    */
    // ===================================
    @Override public void doAction(int option)
@@ -158,38 +159,22 @@ public class MainMenuView extends MenuView {
     // =====================================================
     public void startSavedGame()
     {
-        //get rid of \n character left in the stream
-        System.out.println("Start saved game option .");
+         //get rid of \n character left in the stream
+        keyboard.nextLine();
         
         //prompt user and get a file path
+        System.out.println("\nEnter file path of saved game:");
+        
+        //simplify the keyboard entry
+        String filepath;
+        filepath = keyboard.nextLine();
+        
         //call the getSavedGame() method in the GameControl class to load the game
+        GameControl.getSavedGame(filepath);
+        
         //display the game menu for the loaded game
-        
-        /**
-        * the getSavedGame method
-        * Purpose: load a saved game from disk
-        * Parameters: the file path
-        * Returns: none
-        * Side Effect: the game reference in the driver is updated
-        */
-        public static void getSavedGame(String filePath)
-        {
-        Game theGame = null;
-
-        try (FileInputStream fips = new FileInputStream(filePath))
-        {
-            ObjectInputStream input = new ObjectInputStream(fips);
-            theGame = (Game) input.readObject();
-            CityOfAaron.setCurrentGame(theGame);
-        }
-        catch(Exception e)
-        {
-            System.out.println("There was an error reading the saved game file\n");
-        }
-        }
-
-
-        
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.displayMenu(); 
     }
     
     
@@ -211,9 +196,19 @@ public class MainMenuView extends MenuView {
     // =====================================================
     public void displaySaveGameView()
     {
-        GameMenuView menu = new GameMenuView();
-        menu.displayMenu();
-        //System.out.println("\nDisplay the game menu view.");
+         //get rid of \n character left in the stream
+        keyboard.nextLine();
+        
+        //prompt user to enter the file path where to save game
+        System.out.println("\nEnter file path where you want to save the game: (ie, c:/CityOfAaron)");
+        
+        //simplify the keyboard entry
+        String filepath;
+        filepath = keyboard.nextLine();
+        
+        //call the setSavedGame() method in the GameControl class to save the game
+        GameControl.setSavedGame(filepath);
+        
     }
         
 }

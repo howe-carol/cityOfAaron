@@ -8,6 +8,12 @@ package control;
 import byui.cit260.CityOfAaron.model.*;
 import java.util.ArrayList;
 import cityofaaron.CityOfAaron;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
+
 
 
 /**
@@ -276,8 +282,49 @@ public class GameControl {
             System.out.println(columns + "|");                       
             columns = "";            
         }            
-    }
+        }
         
+           
+        /**
+        * the getSavedGame method
+        * Purpose: load a saved game from disk
+        * Parameters: the file path
+        * Returns: none
+        * Side Effect: the game reference in the driver is updated
+        * @param filePath
+        */
+        public static void getSavedGame(String filePath)
+        {
+        //Game theGame = null;
+
+        try (FileInputStream fips = new FileInputStream(filePath))
+        {
+            ObjectInputStream input = new ObjectInputStream(fips);
+            theGame = (Game) input.readObject();
+            //CityOfAaron.setCurrentGame(theGame);
+        }
+        catch(Exception e)
+        {
+            System.out.println("There was an error reading the saved game file\n");
+        }
+        }
+        
+        public static void setSavedGame(String filePath)
+        {
+            try (FileOutputStream fops = new FileOutputStream(filePath))
+        {
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+            output.writeObject(theGame);
+            output.flush();
+            //prompt the user that the game has been saved
+            System.out.println("\nYour game was saved.");
+        }
+        catch(Exception e)
+        {
+            System.out.println("There was an error while saving game.\n");
+            e.printStackTrace();
+        }
+        }
 
         
         

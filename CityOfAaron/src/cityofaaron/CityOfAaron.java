@@ -6,13 +6,7 @@
  */
 package cityofaaron;
 import view.*;
-import byui.cit260.CityOfAaron.model.ListItem;
-import byui.cit260.CityOfAaron.model.CropData;
-import byui.cit260.CityOfAaron.model.Game;
-import byui.cit260.CityOfAaron.model.Map;
-import byui.cit260.CityOfAaron.model.Location;
-import byui.cit260.CityOfAaron.model.Player;
-import byui.cit260.CityOfAaron.model.TeamMember;
+import byui.cit260.CityOfAaron.model.*;
 import java.util.Scanner;
 
 
@@ -51,8 +45,6 @@ public class CityOfAaron {
         */
         
         
-       
-        
         MainMenuView mmv = new MainMenuView(); 
         mmv.displayMenu();
         
@@ -87,13 +79,13 @@ public class CityOfAaron {
            
     }
     private static void displayMap() {
-            displayMap();
+        displayMap();
         
     }
     
 
-        public static void setCurrentGame(Game theGame) {
-        
+    public static void setCurrentGame(Game theGame) {
+        CityOfAaron.theGame = theGame;
     }
     
 }
