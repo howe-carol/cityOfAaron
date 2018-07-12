@@ -301,7 +301,7 @@ public class GameControl {
         {
             ObjectInputStream input = new ObjectInputStream(fips);
             theGame = (Game) input.readObject();
-            //CityOfAaron.setCurrentGame(theGame);
+            CityOfAaron.setCurrentGame(theGame);
         }
         catch(Exception e)
         {
@@ -322,7 +322,6 @@ public class GameControl {
         catch(Exception e)
         {
             System.out.println("There was an error while saving game.\n");
-            e.printStackTrace();
         }
         }
 

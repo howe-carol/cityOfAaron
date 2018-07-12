@@ -7,7 +7,6 @@
 package cityofaaron;
 import view.*;
 import byui.cit260.CityOfAaron.model.*;
-import java.util.Scanner;
 
 
 /**
@@ -16,8 +15,8 @@ import java.util.Scanner;
  */
 public class CityOfAaron {
     
-    Scanner keyboard = new Scanner(System.in);
-
+    private static Game theGame = null;
+    
     public static Game getTheGame() {
         return theGame;
     }
@@ -25,7 +24,7 @@ public class CityOfAaron {
     public static void setTheGame(Game theGame) {
         CityOfAaron.theGame = theGame;
     }
-    private static Game theGame;
+    // private static Game theGame;
     
     public static void main(String[] args) 
     {

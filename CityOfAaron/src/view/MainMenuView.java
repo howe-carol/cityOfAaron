@@ -11,8 +11,6 @@ import byui.cit260.CityOfAaron.model.*;
 import cityofaaron.CityOfAaron;
 import java.util.Scanner; 
 import control.*;
-import java.io.FileInputStream;
-import java.io.ObjectInputStream;
 
 /**
  *
@@ -166,11 +164,11 @@ public class MainMenuView extends MenuView {
         System.out.println("\nEnter file path of saved game:");
         
         //simplify the keyboard entry
-        String filepath;
-        filepath = keyboard.nextLine();
+        String filepath = keyboard.nextLine();
         
         //call the getSavedGame() method in the GameControl class to load the game
-        GameControl.getSavedGame(filepath);
+        GameControl theGame = new GameControl();
+        theGame.getSavedGame(filepath);
         
         //display the game menu for the loaded game
         GameMenuView gameMenu = new GameMenuView();
@@ -200,7 +198,7 @@ public class MainMenuView extends MenuView {
         keyboard.nextLine();
         
         //prompt user to enter the file path where to save game
-        System.out.println("\nEnter file path where you want to save the game: (ie, c:/CityOfAaron)");
+        System.out.println("\nEnter file path where you want to save the game: (ie, CityOfAaron123)");
         
         //simplify the keyboard entry
         String filepath;
