@@ -35,6 +35,22 @@ public class CityOfAaron {
     
     public static void main(String[] args) 
     {
+        /*
+        int value1;
+        String value2;
+        System.out.println("Enter a number: ");
+        value1 = input.nextInt();
+        
+        //dummy nextLine() read \n character left in the stream
+        input.nextLine();
+        
+        System.out.println("Enter a string value: ");
+        value2 = input.nextLine();
+        System.out.println(value1);
+        System.out.println(value2);
+        */
+        
+        
        
         
         MainMenuView mmv = new MainMenuView(); 

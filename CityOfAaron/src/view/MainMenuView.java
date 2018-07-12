@@ -8,8 +8,11 @@
 package view;
 
 import byui.cit260.CityOfAaron.model.*;
+import cityofaaron.CityOfAaron;
 import java.util.Scanner; 
 import control.*;
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
 
 /**
  *
@@ -149,14 +152,47 @@ public class MainMenuView extends MenuView {
     }
     
     // The startSavedGame method
-    // Purpose: locate game object and starts saved game
+    // Purpose:  loads a saved game object from disk and start the game
     // parameters: none
     // returns: none
     // =====================================================
     public void startSavedGame()
     {
-        System.out.println("\nStart saved game option .");
+        //get rid of \n character left in the stream
+        System.out.println("Start saved game option .");
+        
+        //prompt user and get a file path
+        //call the getSavedGame() method in the GameControl class to load the game
+        //display the game menu for the loaded game
+        
+        /**
+        * the getSavedGame method
+        * Purpose: load a saved game from disk
+        * Parameters: the file path
+        * Returns: none
+        * Side Effect: the game reference in the driver is updated
+        */
+        public static void getSavedGame(String filePath)
+        {
+        Game theGame = null;
+
+        try (FileInputStream fips = new FileInputStream(filePath))
+        {
+            ObjectInputStream input = new ObjectInputStream(fips);
+            theGame = (Game) input.readObject();
+            CityOfAaron.setCurrentGame(theGame);
+        }
+        catch(Exception e)
+        {
+            System.out.println("There was an error reading the saved game file\n");
+        }
+        }
+
+
+        
     }
+    
+    
     // The displayHelpMenuView method
     // Purpose: Display the help menu view
     // parameters: none
