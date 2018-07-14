@@ -91,8 +91,9 @@ public class GameControl {
         for (ListItem animal : theGame.getAnimals()) {
             System.out.println(animal.getName() + ": " + animal.getNumber());
         }
+        }
         
-        public void printAnimlaList(Writer listItem, Iterable<ListItem> animals)
+        public void printAnimlaList(Writer listItem, ArrayList<ListItem> animals)
         {
         //create BufferedReader object for input file
             try (PrintWriter out = new PrintWriter(listItem))
