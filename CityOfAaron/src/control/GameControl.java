@@ -13,6 +13,7 @@ import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
+import java.io.Writer;
 
 
 
@@ -89,9 +90,34 @@ public class GameControl {
                                "***********************************");
         for (ListItem animal : theGame.getAnimals()) {
             System.out.println(animal.getName() + ": " + animal.getNumber());
-        } 
+        }
         
-    }
+        public void printAnimlaList(Writer listItem, Iterable<ListItem> animals)
+        {
+        //create BufferedReader object for input file
+            try (PrintWriter out = new PrintWriter(listItem))
+            {
+                
+                //print title and column headings
+                out.println("\n\n        Animal List             ");
+                out.printf("%n%-20s%10s", "Animal", "Quantity");
+                out.printf("%n%-20s%10s", "------", "--------");
+                
+                //print the animal and quantiy of each type
+                for (ListItem animal : animals)
+                {
+                    out.printf("%n%-20s%7d", animal.getName()
+                                           , animal.getNumber());
+                }
+            }
+            
+            catch (Exception e)
+            {
+                System.out.println("I/O Error: " + e.getMessage());
+            }
+        }
+        
+        
         
         // create the list of tools
         //@author Benjamin
@@ -325,8 +351,10 @@ public class GameControl {
         }
         }
 
+    }
+
         
         
-}
+
 
 
