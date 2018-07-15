@@ -101,7 +101,10 @@ public class ListMenuView extends MenuView {
              System.out.println("list team");
     }
     
-    
+    /**
+     *
+     * @throws FileNotFoundException
+     */
     public void animalReport() throws FileNotFoundException {
         
         keyboard.nextLine();
