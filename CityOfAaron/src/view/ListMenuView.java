@@ -103,6 +103,7 @@ public class ListMenuView extends MenuView {
     
     /**
      *
+     * @author Tiffany Romrell: Individual Lesson 12
      * @throws FileNotFoundException
      */
     public void animalReport() throws FileNotFoundException {
