@@ -120,10 +120,10 @@ public class ListMenuView extends MenuView {
             for (int i = 0; i < listOfTools.size(); i++) {
                 ListItem tool = listOfTools.get(i);
                 printWriter.println("Tools: " + tool.getName() + ", Quanity: " + tool.getNumber());
+            }
             printWriter.close();
             System.out.println("\nTool report has been saved.");
             }
-        }
         catch(IOException ex){
                 System.out.println("Input or Output Error: " + ex.getMessage());
             }
