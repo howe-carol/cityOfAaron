@@ -102,7 +102,7 @@ public class ListMenuView extends MenuView {
     }
     
     
-    public void animalReport() {
+    public void animalReport() throws FileNotFoundException {
         
         keyboard.nextLine();
         System.out.println("\nPlease enter the file path to save the Animal Report: ");
