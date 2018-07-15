@@ -93,7 +93,7 @@ public class GameControl {
         }
         }
         
-        // save a report of tools to file
+        // save a report of animals to file
         //@author Tiffany Romrell: Individual Lesson 12
         public static void saveAnimalReport(String outputLocation){
             ArrayList<ListItem> animals = theGame.getAnimals();
@@ -106,7 +106,7 @@ public class GameControl {
                 out.printf("%n%-10s%10s", "  Animal  ", "  Quantity  ");
                 out.printf("%n%-10s%10s", "        ", "            ");
                 
-                //print the tool and quantiy of each type
+                //print the animal and quantiy of each type
                 for (ListItem item : animals){
                     out.printf("%n%-10s%10d", item.getName(), item.getNumber());
                 }
