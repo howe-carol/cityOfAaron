@@ -133,30 +133,38 @@ public class ListMenuView extends MenuView {
     }
     
     /**
-     *
+     * @author Benjamin Wood, Individual Assignment Lesson 12
      * @throws FileNotFoundException
      */
     public static void toolReport() throws FileNotFoundException{
         
+        //clear the return
         keyboard.nextLine();
+        //prompt user
         System.out.println("\nPlease enter the file path to save the Tool Report: ");
+        //get user input and assign it a variable name
         String fileName = keyboard.nextLine();
         
         try{
+            //start the print writing process
             PrintWriter printWriter = new PrintWriter(fileName);
+            //add the date to the first line in the file print
             Date now = new Date();
             printWriter.println("Tools Report created " + now.toString());
-            
+            //grab the tool list and create an arraylist
             ArrayList<ListItem> listOfTools;
             listOfTools = GameControl.theGame.getTools();
-            
+            //comb through the arraylist and print each line
             for (int i = 0; i < listOfTools.size(); i++) {
                 ListItem tool = listOfTools.get(i);
                 printWriter.println("Tools: " + tool.getName() + ", Quanity: " + tool.getNumber());
             }
+            //clear the buffer
             printWriter.close();
+            //prompt user that the file was saved
             System.out.println("\nTool report has been saved.");
             }
+        //catch any erros and display to user
         catch(IOException ex){
                 System.out.println("Input or Output Error: " + ex.getMessage());
             }
