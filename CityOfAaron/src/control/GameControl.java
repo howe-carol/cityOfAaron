@@ -93,31 +93,31 @@ public class GameControl {
         }
         }
         
-        public void printAnimlaList(Writer listItem, ArrayList<ListItem> animals)
-        {
-        //create BufferedReader object for input file
-            try (PrintWriter out = new PrintWriter(listItem))
-            {
+        // save a report of tools to file
+        //@author Tiffany Romrell: Individual Lesson 12
+        public static void saveAnimalReport(String outputLocation){
+            ArrayList<ListItem> animals = theGame.getAnimals();
+            
+            //create BufferedReader object for input file
+            try (PrintWriter out = new PrintWriter(outputLocation)) {
                 
                 //print title and column headings
-                out.println("\n\n        Animal List             ");
-                out.printf("%n%-20s%10s", "Animal", "Quantity");
-                out.printf("%n%-20s%10s", "------", "--------");
+                out.println("\n\n          Animal Report          ");
+                out.printf("%n%-10s%10s", "  Animal  ", "  Quantity  ");
+                out.printf("%n%-10s%10s", "        ", "            ");
                 
-                //print the animal and quantiy of each type
-                for (ListItem animal : animals)
-                {
-                    out.printf("%n%-20s%7d", animal.getName()
-                                           , animal.getNumber());
+                //print the tool and quantiy of each type
+                for (ListItem item : animals){
+                    out.printf("%n%-10s%10d", item.getName(), item.getNumber());
                 }
-            }
             
-            catch (Exception e)
-            {
-                System.out.println("I/O Error: " + e.getMessage());
+            //throw exception if there is an error during process
+            } catch (Exception e) {
+                System.out.println("Oops, there was an error.");
             }
         }
         
+ 
         
         
         // create the list of tools
