@@ -69,8 +69,14 @@ public class ListMenuView extends MenuView {
                 }
             }
                     break;
-                case 6: //SAve Animal Report
+                case 6:  {
+                try {
+                    //Save Animal Report
                     animalReport();
+                } catch (FileNotFoundException ex) {
+                    Logger.getLogger(ListMenuView.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
                     break;
                 case 7: // return to main menu
                     break;
@@ -95,8 +101,31 @@ public class ListMenuView extends MenuView {
              System.out.println("list team");
     }
     
-    public void animalReport() {
-        System.out.println("Still need code to save Animal Report.");
+    
+    public void animalReport() throws FileNotFoundException {
+        
+        keyboard.nextLine();
+        System.out.println("\nPlease enter the file path to save the Animal Report: ");
+        String fileName = keyboard.nextLine();
+        
+        try{
+            PrintWriter printWriter = new PrintWriter(fileName);
+            Date now = new Date();
+            printWriter.println("Animals Report created " + now.toString());
+            
+            ArrayList<ListItem> listOfAnimals;
+            listOfAnimals = GameControl.theGame.getAnimals();
+            
+            for (int i = 0; i < listOfAnimals.size(); i++) {
+                ListItem animal = listOfAnimals.get(i);
+                printWriter.println("Animals: " + animal.getName() + ", Quanity: " + animal.getNumber());
+            }
+            printWriter.close();
+            System.out.println("\nAnimal report has been saved.");
+            }
+        catch(IOException ex){
+                System.out.println("Input or Output Error: " + ex.getMessage());
+            }
     }
     
     /**
