@@ -6,6 +6,14 @@
 package view;
 
 import control.GameControl;
+import byui.cit260.CityOfAaron.model.*;
+import java.io.PrintWriter;
+import java.io.IOException;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 
@@ -28,8 +36,10 @@ public class ListMenuView extends MenuView {
                    "2. Tools in the storehouse\n" +
                    "3. Provisions in the storehouse\n" +
                    "4. Authors of this game\n" +
-                   "5. Quit\n",
-        5);
+                   "5. Save a Report of Tools\n" +
+                   "6. Save a Report of Animals\n" +
+                   "7. Quit\n",
+        7);
         
    }
      
@@ -49,8 +59,20 @@ public class ListMenuView extends MenuView {
                     break;
                 case 4: //LIST TEAM
                     listTeam();
-                    break; 
-                case 5: // return to main menu
+                    break;
+                case 5: {
+                try {
+                    //Save Tool Report
+                    toolReport();
+                } catch (FileNotFoundException ex) {
+                    Logger.getLogger(ListMenuView.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+                    break;
+                case 6: //SAve Animal Report
+                    animalReport();
+                    break;
+                case 7: // return to main menu
                     break;
             }
         }
@@ -72,7 +94,41 @@ public class ListMenuView extends MenuView {
     public void listTeam() {
              System.out.println("list team");
     }
-
+    
+    public void animalReport() {
+        System.out.println("Still need code to save Animal Report.");
+    }
+    
+    /**
+     *
+     * @throws FileNotFoundException
+     */
+    public static void toolReport() throws FileNotFoundException{
+        
+        keyboard.nextLine();
+        System.out.println("\nPlease enter the file path to save the Tool Report: ");
+        String fileName = keyboard.nextLine();
+        
+        try{
+            PrintWriter printWriter = new PrintWriter(fileName);
+            Date now = new Date();
+            printWriter.println("Tools Report created " + now.toString());
+            
+            ArrayList<ListItem> listOfTools;
+            listOfTools = GameControl.theGame.getTools();
+            
+            for (int i = 0; i < listOfTools.size(); i++) {
+                ListItem tool = listOfTools.get(i);
+                printWriter.println("Tools: " + tool.getName() + ", Quanity: " + tool.getNumber());
+            printWriter.close();
+            System.out.println("\nTool report has been saved.");
+            }
+        }
+        catch(IOException ex){
+                System.out.println("Input or Output Error: " + ex.getMessage());
+            }
+        
+    }
 
    
 }

@@ -27,7 +27,7 @@ public class GameControl {
     private static final int MAX_COL = 8;
 
     // reference to a Game object
-    private static Game theGame;
+    public static Game theGame;
     
     
     
@@ -139,8 +139,34 @@ public class GameControl {
                                "********************************");
         for (ListItem tool: theGame.getTools()) {
         System.out.println(tool.getName() + ": " + tool.getNumber());
-        }  
-    }
+            }  
+        }
+        
+        // save a report of tools to file
+        //@author Benjamin Wood: Individual Lesson 12
+        public static void saveToolReport(String outputLocation){
+            ArrayList<ListItem> tools = theGame.getTools();
+            
+            //create BufferedReader object for input file
+            try (PrintWriter out = new PrintWriter(outputLocation)) {
+                
+                //print title and column headings
+                out.println("\n\n          Tool Report          ");
+                out.printf("%n%-10s%10s", "  Tool  ", "  Quantity  ");
+                out.printf("%n%-10s%10s", "        ", "            ");
+                
+                //print the tool and quantiy of each type
+                for (ListItem item : tools){
+                    out.printf("%n%-10s%10d", item.getName(), item.getNumber());
+                }
+            
+            //throw exception if there is an error during process
+            } catch (Exception e) {
+                System.out.println("Oops, there was an error.");
+            }
+        }
+        
+        
         //create the list of provisions
         
         // create the Locations and the Map object
