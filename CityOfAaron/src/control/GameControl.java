@@ -14,6 +14,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 import java.io.Writer;
+import view.GameMenuView;
+import view.MapKeyView;
 
 
 
@@ -23,7 +25,7 @@ import java.io.Writer;
  */
 public class GameControl {
     // size of the Locations array
-    private static final int MAX_ROW = 5;
+    private static final int MAX_ROW = 8;
     private static final int MAX_COL = 8;
 
     // reference to a Game object
@@ -314,6 +316,7 @@ public class GameControl {
                 theMap.setLocation(i, 0, loc);
             }
             
+            
             theGame.setTheMap(theMap);
             
           
@@ -334,7 +337,14 @@ public class GameControl {
             
             System.out.println(columns + "|");                       
             columns = "";            
-        }            
+        }  
+             
+        
+        // @author Tiffany Romrell
+        MapKeyView menu = new MapKeyView();
+        menu.displayMenu();
+
+        
         }
         
            
