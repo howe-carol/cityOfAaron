@@ -347,6 +347,29 @@ public class GameControl {
         
         }
         
+        /**
+         * the setPlayerPosition method()
+         * Purpose:  get the Player class, pass the new row and column 
+         * from the new location option in the GameMenuView class
+         * Parameter:  int row and int col
+         * Returns:  none, void
+         * @param row
+         * @param col
+         */
+        
+        public static void setPlayerPosition(int row, int col){
+            //get instance of ThePlayer
+            Player player = theGame.getThePlayer();
+            //set new location row and col for ThePlayer
+            player.setRowPosition(row);
+            player.setColPosition(col);
+        }
+        public static void getPlayerPosition(int rowPosition, int colPosition){
+            Player player = theGame.getThePlayer();
+            //get current location row and col for ThePlayer
+            rowPosition = player.getRowPosition();
+            colPosition = player.getColPosition();
+        }
            
         /**
         * the getSavedGame method

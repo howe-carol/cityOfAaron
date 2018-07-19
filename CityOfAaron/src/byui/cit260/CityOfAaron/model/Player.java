@@ -16,13 +16,19 @@ public class Player implements Serializable {
     
     //class instance variables
     private String name;
+    private int rowPosition;
+    private int colPosition;
+    
+    public Player(){
+        
+    }
 
-    public Player() {
+    public Player(int rowPosition, int colPosition) {
+        //initialize Player() map location of (0,0)
+        this.rowPosition = 0;
+        this.colPosition = 0;
     }
     
-    
-    
-
     public String getName() {
         return name;
     }
@@ -31,6 +37,22 @@ public class Player implements Serializable {
         this.name = name;
     }
 
+    public int getRowPosition() {
+        return rowPosition;
+    }
+
+    public void setRowPosition(int rowPosition) {
+        this.rowPosition = rowPosition;
+    }
+
+    public int getColPosition() {
+        return colPosition;
+    }
+
+    public void setColPosition(int colPosition) {
+        this.colPosition = colPosition;
+    }
+    
     @Override
     public int hashCode() {
         int hash = 5;
