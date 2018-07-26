@@ -7,9 +7,11 @@ package view;
 
 import control.GameControl;
 import byui.cit260.CityOfAaron.model.*;
+import static control.GameControl.theGame;
 import java.io.PrintWriter;
 import java.io.IOException;
 import java.io.FileNotFoundException;
+import static java.lang.System.out;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.logging.Level;
@@ -60,14 +62,9 @@ public class ListMenuView extends MenuView {
                 case 4: //LIST TEAM
                     listTeam();
                     break;
-                case 5: {
-                try {
+                case 5: 
                     //Save Tool Report
-                    toolReport();
-                } catch (FileNotFoundException ex) {
-                    Logger.getLogger(ListMenuView.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
+                    toolReport();            
                     break;
                 case 6:  {
                 try {
@@ -134,41 +131,22 @@ public class ListMenuView extends MenuView {
     
     /**
      * @author Benjamin Wood, Individual Assignment Lesson 12
-     * @throws FileNotFoundException
+     * 
      */
-    public static void toolReport() throws FileNotFoundException{
+    
+    public void toolReport() {
+        GameControl theGameControl = new GameControl();
         
-        //clear the return
         keyboard.nextLine();
-        //prompt user
-        System.out.println("\nPlease enter the file path to save the Tool Report: ");
-        //get user input and assign it a variable name
-        String fileName = keyboard.nextLine();
-        
-        try{
-            //start the print writing process
-            PrintWriter printWriter = new PrintWriter(fileName);
-            //add the date to the first line in the file print
-            Date now = new Date();
-            printWriter.println("Tools Report created " + now.toString());
-            //grab the tool list and create an arraylist
-            ArrayList<ListItem> listOfTools;
-            listOfTools = GameControl.theGame.getTools();
-            //comb through the arraylist and print each line
-            for (int i = 0; i < listOfTools.size(); i++) {
-                ListItem tool = listOfTools.get(i);
-                printWriter.println("Tools: " + tool.getName() + ", Quanity: " + tool.getNumber());
-            }
-            //clear the buffer
-            printWriter.close();
+                   
+            System.out.println("Please enter the file path.");
+            
+            String filePath = keyboard.nextLine();
+            
+            theGameControl.saveToolReport(filePath);
+            theGameControl.displayToolList();
             //prompt user that the file was saved
-            System.out.println("\nTool report has been saved.");
-            }
-        //catch any erros and display to user
-        catch(IOException ex){
-                System.out.println("Input or Output Error: " + ex.getMessage());
-            }
-        
+            
     }
 
    

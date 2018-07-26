@@ -14,6 +14,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 import java.io.Writer;
+import java.util.Date;
 import view.GameMenuView;
 import view.MapKeyView;
 
@@ -138,7 +139,9 @@ public class GameControl {
         public void displayToolList() {
             System.out.println("********************************\n"+
                                "*This is a list of your tools: *\n"+
-                               "********************************");
+                               "********************************\n"+
+                               " TOOL : Quantity   \n"+
+                               "--------------------------------\n");
         for (ListItem tool: theGame.getTools()) {
         System.out.println(tool.getName() + ": " + tool.getNumber());
             }  
@@ -151,23 +154,24 @@ public class GameControl {
             
             //create BufferedReader object for input file
             try (PrintWriter out = new PrintWriter(outputLocation)) {
-                
+                Date now = new Date();
                 //print title and column headings
+                out.println("Created " + now.toString());
                 out.println("\n\n          Tool Report          ");
-                out.printf("%n%-10s%10s", "  Tool  ", "  Quantity  ");
-                out.printf("%n%-10s%10s", "        ", "            ");
+                out.printf("%n%-20s%10s", "  Tool  ", "  Quantity  ");
+                out.printf("%n%-20s%10s", "        ", "            ");
                 
                 //print the tool and quantiy of each type
                 for (ListItem item : tools){
-                    out.printf("%n%-10s%10d", item.getName(), item.getNumber());
+                    out.printf("%n%-20s%10d", item.getName(), item.getNumber());
                 }
-            
+            System.out.println("\nTool report has been saved.\n");
             //throw exception if there is an error during process
             } catch (Exception e) {
-                System.out.println("Oops, there was an error.");
-            }
+                System.out.println("Oops, there was an error.\n");
+            } 
+            
         }
-        
         
         //create the list of provisions
         

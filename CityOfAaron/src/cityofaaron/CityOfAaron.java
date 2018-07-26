@@ -7,6 +7,7 @@
 package cityofaaron;
 import view.*;
 import byui.cit260.CityOfAaron.model.*;
+import java.io.PrintWriter;
 
 
 /**
@@ -16,7 +17,14 @@ import byui.cit260.CityOfAaron.model.*;
 public class CityOfAaron {
     
     private static Game theGame = null;
+    public static PrintWriter outFile = null;
     
+    public static PrintWriter getOutFile(){
+        return outFile;
+    }
+    public static void setOutFile (PrintWriter outFile) {
+        CityOfAaron.outFile = outFile;
+    }
     public static Game getTheGame() {
         return theGame;
     }
